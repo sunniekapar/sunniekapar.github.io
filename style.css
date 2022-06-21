@@ -13,11 +13,16 @@
     font-family: var(--font);
     max-width: 70%;
     color: var(--dark_grey);
+    margin: 0 auto;
 }
 
-.sidenav {
-    position: fixed;
-    top: 10%;
-    right: 15%;
+.about-dropdown, .project-dropdown {
+    color:aliceblue;
 }
 
+.about-button:hover .about-dropdown {
+    color: red;
+}
+.about-text {
+    visibility: hidden;
+}
