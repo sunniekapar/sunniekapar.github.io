@@ -1,0 +1,23 @@
+:root {
+    --dark_grey: #404040;
+    --font: Arial, Helvetica, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+.header {
+    font-family: var(--font);
+    max-width: 70%;
+    color: var(--dark_grey);
+}
+
+.sidenav {
+    position: fixed;
+    top: 10%;
+    right: 15%;
+}
+
