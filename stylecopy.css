@@ -1,7 +1,7 @@
 :root {
     --font: Arial, Helvetica, sans-serif;
     --font-color: #121517; 
-    --header-color: #F9F2F1;
+    --header-color: #F6F6F6;
     --background-color: #F6F6F6;
 }
 
@@ -14,52 +14,76 @@ body {
 }
 
 .container {
-    width: 100vw;
-    height: 100vh;
-
+    width: 100%;
+    height: 200vh;
+    overflow: auto;
     font-family: var(--font);
     color: var(--font-color);
     display: grid;
-    grid-template: 200px 1fr 1fr 100px / .25fr 1fr .3fr;
-
-    gap: 10px;
+    grid-template: 200px 100vh 3fr 1fr 200px / .2fr 1fr .2fr;  
+    gap: 10px
+    
 }
 
 .container div {
     padding: 20px;
-    border: 1px solid black; 
 }
 
-.header-box {
+.header {
     grid-column: 1 / span 3;
-    grid-row: 1 / span 1;
-    background-color: var(--header-color);
-    
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.08);
-}
-
-.header-text {
-    grid-column: 2 / span 1;
-    grid-row: 1 / span 1;
-}
-
-.logo {
-    grid-column: 1 / span 1;
-    grid-row: 1 / span 3;
+    grid-row: 2 / span 1;
+    background-color: var(--header-color);   
+    box-shadow: 0 10px 8px 0 rgba(0, 0, 0, 0.08);
 }
 
 .content {
     grid-column: 2 / span 1;
-    grid-row: 2 / span 2;
+    grid-row: 3 / span 2;
 }
 
-.sidenav {
-    grid-column: 3 / span 1;
-    grid-row: 1 / span 3;
-    text-align: right;
+.navbar {
+    
+    grid-column: 1 / span 3;
+    grid-row: 1 / span 1;
 }
 
 .footer {
     grid-column: 1 / span 3;
-    grid-row: 4 / span 1;
+    grid-row: 5 / span 1;
 }
+/* END OF LAYOUT */
+
+/* START OF NAVIGATION */ 
+.navbar ul  {
+    float: right;
+    list-style: none;
+    vertical-align: top;
+    text-align: right;
+    line-height: 2rem;  
+    margin-left: 8rem;
+}
+.navbar div {
+    padding: 0;
+    border: none;
+}
+.navbar button {
+    all: unset;
+}
+
+.navbar a {
+    text-decoration: none;
+    display: inline-block;
+    min-width: 100px;
+}
+
+.about-dropdown-content, .project-dropdown-content {
+    display:none;
+    z-index: 1;
+    width: 100%;
+}
+
+.about-dropdown:hover .about-dropdown-content,
+.project-dropdown:hover .project-dropdown-content {
+    display: block;
+}
+/* END OF SIDE NAVIGATION */
