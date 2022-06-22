@@ -1,20 +1,60 @@
 :root {
     --dark_grey: #404040;
     --font: Arial, Helvetica, sans-serif;
+    --content: 4;
 }
 
 * {
     margin: 0;
     padding: 0;
-    box-sizing: inherit;
+    background-color: #f5f5f5;
 }
 
-.header {
+/* GRID LAYOUT*/
+
+.container {
+    /* whole webpage */
+    width: 100vw;
+    height: 200vh;
     font-family: var(--font);
-    max-width: 70%;
-    color: var(--dark_grey);
-    margin: 0 auto;
+
+    display: grid;
+
+    grid-template: 200px repeat(var(--content), 1fr) 100px / .25fr 2fr .75fr;
+    box-sizing: borer-box;
+
+    gap: 10px;
+    padding: 10px;
+
 }
+
+.container div {
+    /* each box*/
+    padding: 10px;
+
+}
+
+.logo {
+    grid-row: 1 / span 5;
+    grid-column: 1 / span 1;
+}
+
+.header div {
+    grid-column: 2 / span 1;
+    background-color:red;
+}
+
+.sidenav {
+    grid-row: 1 / span 5;
+    grid-column: 3 / span 1;
+}
+
+.footer {
+    grid-column: 1 / span 3;
+}
+
+/* GRID LAYOUT END*/
+
 
 .sidenav ul {
     line-height: 2em;
@@ -61,6 +101,7 @@
     background-color: white;
 }
 
+/*
 .sidenav li:after{
     content: '';
     position: absolute;
@@ -76,7 +117,4 @@
     transform: scaleX(0.5);
     transform-origin: bottom;
 }
-
-.about-text {
-    display: none;
-}
+*/
