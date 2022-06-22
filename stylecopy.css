@@ -1,0 +1,50 @@
+:root {
+    --font: Arial, Helvetica, sans-serif;
+}
+
+* {
+    margin: 0;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+
+    font-family: var(--font-family);
+
+    display: grid;
+    grid-template: 200px 1fr 1fr 100px / .5fr 1fr .75fr; 
+    
+    padding: 10px;
+}
+
+.container div {
+    border: .5px solid rgb(218, 218, 218);
+    padding: 10px;
+}
+
+.header {
+    grid-column: 1 / span 3;
+    grid-row: 1 / span 1;
+}
+
+.logo  {
+    grid-column: 1 / span 1;
+    grid-row: 1 / span 3;
+}
+
+.content {
+    grid-column: 2 / span 1;
+    grid-row: 2 / span 2;
+}
+
+.sidenav {
+    grid-column: 3 / span 1;
+    grid-row: 1 / span 3;
+}
+
+.footer {
+    grid-column: 1 / span 3;
+    grid-row: 4 / span 1;
+}
+
