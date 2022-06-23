@@ -1,7 +1,9 @@
 :root {
-    --font: Arial, Helvetica, sans-serif;
-    --font-color: #121517; 
-    --header-color: #F6F6F6;
+
+    --font: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    --font-color-dark: #3D3D3D; 
+    --font-color-light: #ffffff;
+    --header-color: #FBF3EE;
     --background-color: #F6F6F6;
 }
 
@@ -18,9 +20,9 @@ body {
     height: 200vh;
     overflow: auto;
     font-family: var(--font);
-    color: var(--font-color);
+    color: var(--font-color-dark);
     display: grid;
-    grid-template: 200px 100vh 3fr 1fr 200px / .2fr 1fr .2fr;  
+    grid-template:  100vh 3fr 1fr 200px / .2fr 1fr .2fr;  
     gap: 10px
     
 }
@@ -29,70 +31,108 @@ body {
     padding: 20px;
 }
 
-.header {
+.header-container {
+    display:none;
     grid-column: 1 / span 3;
-    grid-row: 2 / span 1;
+    grid-row: 1 / span 1;
     background-color: var(--header-color);   
     box-shadow: 0 10px 8px 0 rgba(0, 0, 0, 0.08);
+    
 }
 
 .content {
+    border: 1px solid black;
     grid-column: 2 / span 1;
-    grid-row: 3 / span 2;
+    grid-row: 2 / span 2;
 }
 
 .navbar {
-    
+    z-index: 1;
     grid-column: 1 / span 3;
     grid-row: 1 / span 1;
 }
 
 .footer {
     grid-column: 1 / span 3;
-    grid-row: 5 / span 1;
+    grid-row: 4 / span 1;
 }
 /* END OF LAYOUT */
 
+
+/* START OF HEADER */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* END OF HEADER */
 /* START OF NAVIGATION */ 
-.navbar ul  {
-    float: right;
+.navbar {
+    border: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    height: 12vh;
+    padding-left: 7rem;
+    padding-right: 5rem;
+    z-index: 100;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
     list-style: none;
-    vertical-align: top;
-    text-align: right;
-    line-height: 2rem;  
-    margin-left: 8rem;
-}
-.navbar div {
-    padding: 0;
-    border: none;
-}
-.navbar button {
-    all: unset;
+    font-size: 1.15rem;
 }
 
-.navbar a {
-    text-decoration: none;
-    display: inline-block;
-    min-width: 100px;
+.nav-links a {
+    margin-left: 50px;
 }
 
-.about-dropdown-content, .project-dropdown-content {
-    display:none;
-    z-index: 1;
-    width: 100%;
-}
 
-.about-dropdown:hover .about-dropdown-content,
-.project-dropdown:hover .project-dropdown-content {
-    display: block;
-}
-/* END OF SIDE NAVIGATION */
 
-/* REMOVE DROP DOWN:
-INCLUDING PROJECTS IS USELESS
-why?: just link github at the bottom
-
-This then leaves too much space just for "about" and "contact"
-
-LOOOOOOOOOOOOOOOOOOOOOOL ALL THAT WORK FO RNOTHING
-*/
+/* END OF NAVIGATION */
