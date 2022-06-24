@@ -29,24 +29,16 @@ body {
     font-family: var(--font);
     color: var(--font-color-dark);
     display: grid;
-    grid-template: 99vh 3fr 1fr 75vh / .2fr 1fr .2fr;
+    grid-template: 99vh 3fr 1fr 75vh / .1fr 1fr .1fr;
     gap: 10px;   
 }
 
-.content {
-    border: 1px solid black;
-    grid-column: 2 / span 1;
-    grid-row: 2 / span 2;
-    margin-top: 50px;
-}
 
 .navbar {
     z-index: 1;
     grid-column: 1 / span 3;
     grid-row: 1 / span 1;
 }
-
-
 
 .navbar {
     font-family: var(--font);
@@ -69,36 +61,22 @@ body {
     list-style: none;
     font-size: 1.15rem;
     gap: 3rem;
-
 }
 
 .navbar a, button {
     text-decoration: none;
     color: var(--font-color-unfocus);
-
 }
 
 .navbar a:hover, button:hover {
     color: var(--font-color-dark);
 }
 
-.content div {
-    border: 1px solid black;
-    height: 300px;
-}
 
-.content {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    gap: 5rem;
-}
 
 .logo {
     user-select: none;
 }
-
-
 
 .contact-button {
     all:unset;
@@ -115,9 +93,6 @@ body {
     box-shadow:0 4px 8px 0 rgba(0,0,0,0.2);
 }
 
-
-
-
 /* HEADER STUFF */
 .header-container {  
     position:relative;
@@ -131,8 +106,7 @@ body {
     position:absolute;
     display: grid;
     width: 100%;
-    grid-template:  25vh 37vh 37vh/ 1fr 1fr;
-    
+    grid-template:  25vh 37vh 37vh/ 1fr 1fr;  
 }
 
 .header-content div {
@@ -147,6 +121,7 @@ body {
    grid-row: 2 / span 1;
    grid-column: 1 / span 1;
 }
+
 
 .header-content-subtitle {
     display: flex;
@@ -164,12 +139,15 @@ body {
     justify-content: space-evenly;
     align-items: flex-end;
 }
+
 .header-content img {
     max-width: 100%;
     max-height:100%;
 }
+
 .header-content h1 {
     font-size: 5rem;
+    font-weight: bold;
 }
 
 .header-content h4 {
@@ -177,15 +155,28 @@ body {
     font-weight:lighter;
 }
 
+.header-hover  {
+    all:unset;
+    padding: .03rem;
+    z-index: -2;
+    background-image: linear-gradient(to right, transparent 50%, rgba(0, 0, 0, 0.08) 50%);
+    background-size: 200%;
+    transition: background-position 0.5s ease-in-out;
+}
+
+.header-content-title:hover .header-hover {
+    background-position: -100%;
+}
+
 /* END OF HEADER STUFF*/
 
 /* START OF FOOTER STUFF*/
-.footer {   
+.footer-container {   
     position:relative;
     grid-column: 1 / span 3;
     grid-row: 4 / span 1;
     margin-top: 50px;
-    color: var(--font-color-light);
+    color: var(--font-color-light);   
 }
 
 .footer-content {
@@ -205,7 +196,6 @@ body {
 .footer-text {
     grid-row: 1;
     grid-column: 2;
-
 }
 
 .footer-button {
@@ -216,30 +206,40 @@ body {
 .footer-logo {
     grid-row: 3;
     grid-column: 2;
-    width: 75%;
-    
-
-}
-
-.footer-logo hr {
-    
-    display:flex;
-    align-content: center;
-    flex-direction:column;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-content: center;  
+    align-items: center;
+    width: 80%;
+    font-size: 24px;
 }
 
 .footer-links {
-    width: 75%;
+    width: 80%;
     display:flex;
     justify-content: space-evenly;
     grid-row: 4;
-    grid-column: 2;
-    
+    grid-column: 2;   
 }
 
-.footer-links img {
+.footer-links img {   
     width: 78px;
-    height:78px;   
+    height:78px;
+    transition-duration: 0.5s;     
+}
+
+.footer-links a {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width: 110px;
+    height: 110px;
+}
+
+.footer-links img:hover {
+    width: 110px;
+    height: 110px;
 }
 
 .footer-message {
@@ -265,15 +265,46 @@ body {
 }
 
 .logo-light a {
-    transition-duration: 500ms;
+    display: flex;
+    justify-content: center;
+    transition-duration: .5s;
     text-decoration: none;
-    user-select: none;
-   
+    user-select: none; 
     color: var(--font-color-light);
     opacity:.5;
+    padding:2rem; 
+    max-width: 100%;  
 }
 
 .logo-light a:hover {
     opacity: 1;
 }
+
+.footer-logo hr {
+    border: 3px solid var(--background-color);
+    border-radius: 3px;
+    width: 100%;
+}
 /*END OF FOOTER STUFF*/
+
+/* START OF CONTENT STUFF*/
+.content-container {
+    position:relative;
+    border: 1px solid black;
+    grid-column: 2 / span 1;
+    grid-row: 2 / span 2;
+    margin-top: 50px;
+}
+
+.content  {
+    display: grid;
+    position: aboslute;
+    grid-template: repeat(4, 50vh) / 100%;
+    gap:5rem;
+    padding: 5rem 0;
+    border: 1px dashed black;
+}
+
+.content div {
+    border: 2px solid white;
+}
