@@ -4,7 +4,7 @@
     --font: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     --color-dark: #161A1D;
     --font-color-unfocus: #666666;
-    --font-color-dark: #161A1D;
+    --font-color-dark: #404040;
     --font-color-light: #F5F5F5;
     --accent-color: #000;
     --header-color: ##fbf9f7;
@@ -17,10 +17,12 @@
 
 html {
     scroll-behavior: smooth;
+    box-sizing:border-box;
 }
 
 body {
     background-color: var(--background-color);
+    
 }
 
 .container {
@@ -71,8 +73,6 @@ body {
 .navbar a:hover, button:hover {
     color: var(--font-color-dark);
 }
-
-
 
 .logo {
     user-select: none;
@@ -290,21 +290,58 @@ body {
 /* START OF CONTENT STUFF*/
 .content-container {
     position:relative;
-    border: 1px solid black;
     grid-column: 2 / span 1;
     grid-row: 2 / span 2;
     margin-top: 50px;
+    width: 100%;
 }
 
 .content  {
     display: grid;
-    position: aboslute;
     grid-template: repeat(4, 50vh) / 100%;
     gap:5rem;
     padding: 5rem 0;
-    border: 1px dashed black;
+    border: /*1px dashed black;*/
 }
 
 .content div {
-    border: 2px solid white;
+    /*border: 2px solid white;*/
 }
+
+.about-container {    
+    display: grid;
+    position: relative;
+    color: var(--font-color-dark);
+   
+}
+
+.about-content {
+    position: aboslute;
+    display:grid;
+    grid-template: 50% 50% / 1fr 1fr;
+}
+
+.about-me {
+    grid-column: 1;
+    grid-row:1;
+}
+
+.about-me-image {
+    display:grid;
+    grid-column: 2 /span 1;
+    grid-row: 1 span 1;
+    justify-items: end;
+    align-items: flex-start;
+}
+.about-me-paragraph2 {
+    display:flex;
+    flex-wrap: wrap;
+    grid-column: 1 /span 2;
+    grid-row: 2;
+}
+.about-me-image img {
+    max-width: 40%;
+    max-height: 40%;
+}
+
+
