@@ -24,26 +24,20 @@ body {
 }
 
 .container {
+    position:relative;
     width: 100%;
     font-family: var(--font);
     color: var(--font-color-dark);
     display: grid;
     grid-template: 99vh 3fr 1fr 200px / .2fr 1fr .2fr;
-    gap: 10px;
-    
-}
-
-.header-container {
-    grid-column: 1 / span 3;
-    grid-row: 1 / span 1;
-    background-color: var(--header-color);
-    box-shadow: 0 10px 8px 0 rgba(0, 0, 0, 0.08);
+    gap: 10px;   
 }
 
 .content {
     border: 1px solid black;
     grid-column: 2 / span 1;
     grid-row: 2 / span 2;
+    margin-top: 50px;
 }
 
 .navbar {
@@ -55,6 +49,7 @@ body {
 .footer {
     grid-column: 1 / span 3;
     grid-row: 4 / span 1;
+    margin-top: 50px;
 }
 
 .navbar {
@@ -94,7 +89,6 @@ a:hover, button:hover {
 .content div {
     border: 1px solid black;
     height: 300px;
-    
 }
 
 .content {
@@ -102,19 +96,6 @@ a:hover, button:hover {
     flex-direction: column;
     justify-content: space-evenly;
     gap: 5rem;
-}
-
-.header-content {
-    display: flex;
-    flex-wrap: wrap;
-    align-content: center;
-    text-align: left;
-    gap: 1.5em;
-    padding-left: 5rem;
-    width: 500px;
-    height: 75vh;
-    align-items: center;
-    justify-content: flex-start;
 }
 
 .logo {
@@ -125,7 +106,6 @@ a:hover, button:hover {
     background-color: var(--color-dark);
     color: var(--font-color-light);
 }
-
 
 .contact-button {
     all:unset;
@@ -142,3 +122,66 @@ a:hover, button:hover {
     box-shadow:0 4px 8px 0 rgba(0,0,0,0.2);
 }
 
+
+
+
+/* HEADER STUFF */
+.header-container {  
+    position:relative;
+    grid-column: 1 / span 3;
+    grid-row: 1 / span 1;
+    background-color: var(--header-color);
+    box-shadow: 0 10px 8px 0 rgba(0, 0, 0, 0.08); 
+}
+
+.header-content { 
+    position:absolute;
+    display: grid;
+    width: 100%;
+    grid-template:  25vh 37vh 37vh/ 1fr 1fr;
+    
+}
+
+.header-content div {
+    padding: 10px 0 0 5rem;
+}
+
+.header-content-title {
+   display: flex;
+   align-content: flex-end;
+   flex-wrap: wrap;
+   position: relative;
+   grid-row: 2 / span 1;
+   grid-column: 1 / span 1;
+}
+
+.header-content-subtitle {
+    display: flex;
+    position: relative;
+    grid-row: 3 / span 1;
+    grid-column: 1 / span 1; 
+}
+
+.header-content-headshot {
+    display: flex;
+    padding-bottom: 0;
+    position: relative;
+    grid-row: 2 / span 2;
+    grid-column: 2 / span 3;
+    justify-content: space-evenly;
+    align-items: flex-end;
+}
+.header-content-headshot img {
+    max-width: 100%;
+    max-height:100%;
+}
+.header-content h1 {
+    font-size: 5rem;
+}
+
+.header-content h4 {
+    font-size: 2rem;
+    font-weight:lighter;
+}
+
+/* END OF HEADER STUFF*/
