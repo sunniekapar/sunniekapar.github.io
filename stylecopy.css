@@ -216,10 +216,22 @@ body {
 .footer-logo {
     grid-row: 3;
     grid-column: 2;
+    width: 75%;
+    
+
+}
+
+.footer-logo hr {
+    
+    display:flex;
+    align-content: center;
+    flex-direction:column;
 }
 
 .footer-links {
+    width: 75%;
     display:flex;
+    justify-content: space-evenly;
     grid-row: 4;
     grid-column: 2;
     
