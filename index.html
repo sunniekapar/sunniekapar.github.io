@@ -1,55 +1,126 @@
 <!DOCTYPE html>
-<html lang=”en”>
+<html>
+<meta charset=”UTF-8″>
+<link rel="stylesheet" href="style.css">
+<script src="scripts.js"></script>
+<title>Sunnie Kapar</title>
 
-<head>
-    <meta charset=”UTF-8″>
-    <link rel="stylesheet" href="style.css">
-    <title>Sunnie Kapar</title>
-</head>
+<div class="container">
 
-<body>
-    <div class="container">
-        <div class="logo"> SK</div>
-        <div class="header">
-            <h1>
-                Hello, I'm Sunnie Kapar
-            </h1>
+    <nav class="navbar">
+        <div class="logo">
+            <h1><a href="#header-container"> SK</a> </h1>
         </div>
-
-        <div class="sidenav">
-            <ul class="about-dropdown">
-                <li> <button href="#" class="about-button"> About </button></li>
-                <ul class="about-dropdown-content">
-                    <li ><a href="#"> Goals </a></li>
-                    <li ><a href="#"> Career </a></li>
-                    <li><a href="#"> Experience </a></li>
-                    <li><a href="#"> Skills </a></li>
-                    <li><a href="#"> Resume </a></li>
-                </ul>
-            </ul>
-            <br>
-            <ul class="project-dropdown">
-                <li> <button class="project-button"> Projects</button></li>
-                <ul class="project-dropdown-content">
-                    <li><a href="#"> Academic</a></li>
-                    <li><a href="#"> Independant</a></li>
-                </ul>
+        <div class="nav-links">
+            <ul>
+                <li class="navitem"> <a href="#about-container"> About </a> </li>
+                <li class="navitem"> <a href="#goals-container"> Goals </a> </li>
+                <li class="navitem"> <a href="#skills-container"> Skills </a> </li>
+                <li class="navitem"> <a href="#experience-container"> Experience </a> </li>
+                <li class="navitem"> <a href="sunniekapar-resume.pdf" target="_blank"> Resume </a> </li>
+                <li class="navitem"> <button class="contact-button" href="#"> Contact </button> </li>
             </ul>
         </div>
 
+        <div class="nav-burger">
+            <button>
+                <hr>
+                <hr>
+                <hr>
+            </button>
+        </div>
+    </nav>
 
+    <div class="header-container" id="header-container">
+        <div class="header-content">
+            <div class="header-content-title">
+                <h1>Hello, I'm <a class="header-hover"> Sunnie Kapar.</a></h1>
+            </div>
+            <div class="header-content-headshot">
+                <img src="images/headshot.png">
+            </div>
+            <div class="header-content-subtitle">
+                <h4 class="header-content-subtitle">I'm a highschool student at Craig Kielburger Secondary School
+                    aspiring to become a computer engineer.</h4>
+            </div>
 
-        <div class="large-content">
         </div>
-        <div class="large-content">
-        </div>
-        <div class="large-content">
-        </div>
-        <div class="large-content">
-        </div>
-
-        <div class="footer"></div>
     </div>
-</body>
+
+    <div class="content-container">
+        <div class="content">
+
+            <div id="about-container" class="about-container">
+                <h1 class="about-me-header"> About me </h1>
+                <div class="about-intro">
+                    <p class="about-paragraph1">
+                        lorem ipsum dolor sit amet consectetur adipiscing elit potenti mattis quis neque sed senectus
+                        suspendisse erat habitasse ultricies nulla tristique in urna ridiculus enim sapien nascetur
+                        congue blandit et pulvinar nisi habitant purus fames tellus lorem ipsum dolor sit amet consectetur adipiscing elit potenti mattis quis neque sed senectus
+                        suspendisse erat habitasse ultricies nulla tristique in urna ridiculus enim sapien nascetur
+                        congue blandit et pulvinar nisi habitant purus fames tellus  lorem ipsum dolor sit amet consectetur adipiscing elit potenti mattis quis neque sed senectus
+                        suspendisse erat habitasse ultricies nulla tristique in urna ridiculus enim sapien nascetur
+                        congue blandit et pulvinar nisi habitant purus fames tellus lorem ipsum dolor sit amet consectetur adipiscing elit potenti mattis quis neque sed senectus
+                        suspendisse erat habitasse ultricies nulla tristique in urna ridiculus enim sapien nascetur
+                        congue blandit et pulvinar nisi habitant purus fames tellus
+                    </p>
+                    <img src="images/headshot.png" class="about-img">
+                </div>
+                <div class="about-paragraph2">
+                    lorem ipsum dolor sit amet consectetur adipiscing elit id mauris hac rutrum leo iaculis
+                    interdum nec cubilia taciti vestibulum habitant quis eleifend nam tincidunt gravida blandit
+                    facilisis quam lacinia metus etiam semper platea tristique parturient proin risus nisi
+                    maximus pharetra potenti felis suscipit sodales ornare imperdiet natoque eu litora vel dui
+                    ante fermentum congue sagittis senectus pellentesque volutpat nibh cursus et laoreet tempor
+                    tempus ultricies himenaeos montes mollis euismod aptent nostra tellus ligula morbi cras in
+                    pretium class viverra ex ullamcorper efficitur ut scelerisque porta conubia aenean massa
+                    aliquet sollicitudin varius commodo augue netus curabitur nunc vitae justo eros condimentum
+                </div>
+            </div>
+        
+        <div id="experience-container" class="experience-container">
+            Experience
+        </div>
+        <div id="skills-container" clsas="skills-container">
+            Skills
+            <div>
+                hi
+            </div>
+        </div>
+        <div id="goals-container" class="goals-container">
+            Goals
+        </div>
+    </div>
+
+</div>
+
+<div class="footer-container">
+    <div class="footer-content">
+        <div class="footer-text">
+            <h3>
+                lorem ipsum dolor sit amet consectetur adipiscing elit potenti mattis quis neque sed senectus
+                suspendisse erat habitasse ultricies nulla tristique in urna ridiculus enim sapien nascetur congue
+                blandit et pulvinar nisi habitant purus fames tellus
+            </h3>
+        </div>
+        <div class="footer-button">
+            <button class="contact-button-light"> Get in touch</button>
+        </div>
+        <div class="footer-logo">
+            <h1 class="logo-light"><a href="#header-container"> SK </a></h1>
+            <hr>
+        </div>
+        <div class="footer-links">
+            <a href="https://github.com/sunniekapar" target="_blank"><img src="images/github-icon.png"> </a>
+            <a href="https://www.instagram.com/sunniekapar/" target="_blank"><img src="images/instagram-icon.png"> </a>
+            <a href="https://www.facebook.com/profile.php?id=100004380197142" target="_blank"> <img
+                    src="images/facebook-icon.png"> </a>
+        </div>
+        <div class="footer-message">
+            Designed and developed by Sunnie Kapar using HTML, CSS and JavaScript.
+        </div>
+    </div>
+</div>
+</div>
 
 </html>
