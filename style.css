@@ -9,9 +9,10 @@
     --accent-color: #000;
     --header-color: #fbf9f7;
     --background-color: #F5F5F5;
-    --body-font-size: 1.1vw;
-    --nav-font-size: 1.2vw;
-    --logo-font-size: 1.3vw;
+    --body-font-size: 1.2vw;
+    --nav-font-size: 2.2vh;
+    --logo-font-size: 2.3vh;
+    --content-header-font-size: 1.2vw;
 }
 
 * {
@@ -51,7 +52,7 @@ body {
     align-items: center;
     list-style: none;
     font-size: var(--nav-font-size);
-    gap: 3rem;
+    gap: 5rem;
 }
 
 .navbar a,
@@ -66,10 +67,7 @@ button:hover {
     color: var(--font-color-dark);
 }
 
-.logo  {
-    user-select: none;
-    font-size: var(--logo-font-size);
-}
+
 
 .contact-button {
     all: unset;
@@ -84,6 +82,37 @@ button:hover {
     background: var(--accent-color);
     color: var(--font-color-light);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 1399px) {
+    .about-intro,
+    .about-paragraph2,
+    .about-me-header {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        justify-items: center;
+        align-items: center;
+        align-content: center;
+        text-align: center;
+        margin-bottom: 3rem;
+    }
+
+    .about-me-image {
+        margin-top: 3rem;
+    }
+}
+
+@media (min-width: 1400px) {
+    .about-intro {
+        display: grid;
+        justify-content: center;
+        justify-items: center;
+        align-items: center;
+        grid-template-columns: 0.9fr 1.1fr;
+        gap: 5rem;
+        margin: 2rem 0;
+    }
 }
 
 /* HEADER STUFF */
@@ -115,7 +144,7 @@ button:hover {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        height: 12vh;
+        height: var(--navbar-height);
         padding-left: 5rem;
         padding-right: 5rem;
         z-index: 100;
@@ -136,7 +165,7 @@ button:hover {
     .nav-links {
         display: none;
     }
-    
+
     .nav-burger button:focus-within .nav-links {
         background: black;
         display: flex;
@@ -145,6 +174,11 @@ button:hover {
     .nav-burger hr {
         border: 2px solid var(--font-color-unfocus);
         border-radius: 10px;
+    }
+
+    .logo {
+        user-select: none;
+        font-size: 1.5rem;
     }
 
 }
@@ -216,7 +250,7 @@ button:hover {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        height: 12vh;
+        height: var(--navbar-height);
         padding-left: 5rem;
         padding-right: 5rem;
         z-index: 100;
@@ -225,6 +259,11 @@ button:hover {
 
     .nav-burger {
         display: none;
+    }
+
+    .logo {
+        user-select: none;
+        font-size: var(--logo-font-size);
     }
 }
 
@@ -391,26 +430,30 @@ button:hover {
     margin-top: 50px;
     width: 100%;
 }
-.content > div  {
+
+.content {
+    color: var(--font-color-dark);
+}
+
+.content>div {
     /*outline: 1px solid black;*/
-    padding: 12vh 0 0 0 ;
+    padding: 15vh 0 0 0;
+}
+
+.content>h1 {
+    font-weight: bold;
+    color: var(--accent-color);
+    font-size: var(--content-header-font-size);
 }
 
 .about-container {
     font-size: var(--body-font-size);
-    line-height: 1.3rem;
-    font-weight:lighter;
-}
-.about-intro {
-    display: grid;
-    justify-content: center;
-    justify-items: center;
-    align-items: center;
-    grid-template-columns: 0.9fr 1.1fr;
-    gap: 5rem;
-    margin: 2rem 0; 
+    line-height: 2rem;
+    font-weight: lighter;
+    text-align: justify;
 }
 
+
 .about-intro img {
-    max-width: 40%;
+    max-width: 90%;
 }
