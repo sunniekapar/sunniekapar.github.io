@@ -6,7 +6,7 @@
     --font-color-unfocus: #666666;
     --font-color-dark: #333333;
     --font-color-light: #F5F5F5;
-    --accent-color: #000;
+    --accent-color:  #0b0d0f;
     --header-color: #fbf9f7;
     --background-color: #F5F5F5;
     --header-font-size: calc(4rem + 0.3vh);
@@ -468,5 +468,26 @@ button:hover {
 
 .skills {
     display: grid;
-    grid-template: repeat(2, 50%) / repeat(6, 1fr);
+    grid-template: repeat(2, 1fr) / repeat(3, 1fr);
+    gap: 3rem;
+}
+
+.skills>div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    justify-content: center;
+    text-align: center;  
+    padding:2rem;
+    gap: 1rem;
+}
+
+.skills-description {
+    margin-top: 1rem;
+}
+
+.skills img {
+    max-width: 25%; 
 }
