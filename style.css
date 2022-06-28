@@ -6,7 +6,7 @@
     --font-color-unfocus: #666666;
     --font-color-dark: #333333;
     --font-color-light: #F5F5F5;
-    --accent-color:  #0b0d0f;
+    --accent-color: #0b0d0f;
     --header-color: #fbf9f7;
     --background-color: #F5F5F5;
     --header-font-size: calc(4rem + 0.3vh);
@@ -14,7 +14,7 @@
     --body-font-size: calc(1rem + 0.3vw);
     --nav-font-size: calc(1rem + 0.4vh);
     --logo-font-size: calc(1rem + 0.5vh);
-    --content-header-font-size: (1rem + 0.5vh);
+    --content-header-font-size: calc(2rem + 0.5vw);
 }
 
 * {
@@ -443,11 +443,6 @@ button:hover {
     padding: 15vh 0 0 0;
 }
 
-.content>h1 {
-    font-weight: bold;
-    color: var(--accent-color);
-    font-size: var(--content-header-font-size);
-}
 
 .about-container {
     font-size: var(--body-font-size);
@@ -459,10 +454,6 @@ button:hover {
 .about-intro img {
     max-width: 90%;
 }
-
-
-
-
 
 /*         have to put this in the different media size           */
 
@@ -479,9 +470,10 @@ button:hover {
     align-content: center;
     justify-content: center;
     justify-content: center;
-    text-align: center;  
-    padding:2rem;
+    text-align: center;
+    padding: 3rem 2rem 3rem 2rem;
     gap: 1rem;
+
 }
 
 .skills-description {
@@ -489,5 +481,16 @@ button:hover {
 }
 
 .skills img {
-    max-width: 25%; 
+    max-width: 25%;
 }
+
+.skills-header {
+    text-align: center;
+    font-size: var(--content-header-font-size);
+    padding: 1rem;
+}
+
+.skills-content {
+
+}
+  
