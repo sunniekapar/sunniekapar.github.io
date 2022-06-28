@@ -1,6 +1,6 @@
 :root {
 
-    --navbar-height: 12vh;
+    --navbar-height: calc(5rem + 2vh);
     --font: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     --color-dark: #161A1D;
     --font-color-unfocus: #666666;
@@ -9,10 +9,12 @@
     --accent-color: #000;
     --header-color: #fbf9f7;
     --background-color: #F5F5F5;
-    --body-font-size: 1.2vw;
-    --nav-font-size: 2.2vh;
-    --logo-font-size: 2.3vh;
-    --content-header-font-size: 1.2vw;
+    --header-font-size: calc(4rem + 0.3vh);
+    --subheader-font-size: calc(2rem + 0.3vh);
+    --body-font-size: calc(1rem + 0.3vw);
+    --nav-font-size: calc(1rem + 0.4vh);
+    --logo-font-size: calc(1rem + 0.5vh);
+    --content-header-font-size: (1rem + 0.5vh);
 }
 
 * {
@@ -85,6 +87,7 @@ button:hover {
 }
 
 @media (max-width: 1399px) {
+
     .about-intro,
     .about-paragraph2,
     .about-me-header {
@@ -131,8 +134,8 @@ button:hover {
     }
 
     .header-content img {
-        width: 40%;
-        max-width: 100%;
+        width: 100%;
+        max-width: 40%;
     }
 
     .navbar {
@@ -178,7 +181,7 @@ button:hover {
 
     .logo {
         user-select: none;
-        font-size: 1.5rem;
+        font-size: var(--logo-font-size);
     }
 
 }
@@ -188,7 +191,7 @@ button:hover {
         position: absolute;
         display: grid;
         width: 100%;
-        grid-template: 25vh 37vh 37vh/ 1fr 1fr;
+        grid-template: 47vh 52vh/ 1fr 1fr;
     }
 
     .header-content-title {
@@ -196,7 +199,7 @@ button:hover {
         align-content: flex-end;
         flex-wrap: wrap;
         position: relative;
-        grid-row: 2 / span 1;
+        grid-row: 1 / span 1;
         grid-column: 1 / span 1;
     }
 
@@ -204,7 +207,7 @@ button:hover {
     .header-content-subtitle {
         display: flex;
         position: relative;
-        grid-row: 3 / span 1;
+        grid-row: 2 / span 1;
         grid-column: 1 / span 1;
     }
 
@@ -212,7 +215,7 @@ button:hover {
         display: flex;
         padding-bottom: 0;
         position: relative;
-        grid-row: 2 / span 2;
+        grid-row: 1 / span 2;
         grid-column: 2 / span 3;
         justify-content: space-evenly;
         align-items: flex-end;
@@ -232,7 +235,7 @@ button:hover {
     }
 
     .header-content img {
-        min-width: 400px;
+        min-width: 200px;
         max-width: 90%;
         max-height: 90%;
     }
@@ -276,12 +279,12 @@ button:hover {
 }
 
 .header-content h1 {
-    font-size: 5rem;
+    font-size: var(--header-font-size);
     font-weight: bold;
 }
 
 .header-content h4 {
-    font-size: 2rem;
+    font-size: var(--subheader-font-size);
     font-weight: lighter;
 }
 
@@ -453,7 +456,17 @@ button:hover {
     text-align: justify;
 }
 
-
 .about-intro img {
     max-width: 90%;
+}
+
+
+
+
+
+/*         have to put this in the different media size           */
+
+.skills {
+    display: grid;
+    grid-template: repeat(2, 50%) / repeat(6, 1fr);
 }
