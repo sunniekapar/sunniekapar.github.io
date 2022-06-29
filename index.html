@@ -4,7 +4,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <link rel="stylesheet" href="style.css">
-<script src="scripts.js"></script>
+<script src="script.js"></script>
 <title>Sunnie Kapar</title>
 
 <div class="container">
@@ -16,9 +16,9 @@
         <div class="nav-links">
             <ul>
                 <li class="navitem"> <a href="#about-container"> About </a> </li>
+                <li class="navitem"> <a href="#goals-container"> Goals </a> </li>
                 <li class="navitem"> <a href="#experience-container"> Experience </a> </li>
                 <li class="navitem"> <a href="#skills-container"> Skills </a> </li>
-                <li class="navitem"> <a href="#goals-container"> Goals </a> </li>
                 <li class="navitem"> <a href="pdfs/sunniekapar-resume.pdf" target="_blank"> Resume </a> </li>
                 <li class="navitem"> <button class="contact-button" href="#"> Contact </button> </li>
             </ul>
@@ -53,9 +53,9 @@
         <div class="content">
 
             <div id="about-container" class="about-container">
-                <h1 class="about-me-header"> About me </h1>
+                <h1 class="about-me-header content-header"> About me </h1>
                 <div class="about-intro">
-                    <p class="about-paragraph1">
+                    <p class="about-paragraph1 body-font">
                         lorem ipsum dolor sit amet consectetur adipiscing elit potenti mattis quis neque sed senectus
                         suspendisse erat habitasse ultricies nulla tristique in urna ridiculus enim sapien nascetur
                         congue blandit et pulvinar nisi habitant purus fames tellus lorem ipsum dolor sit amet
@@ -71,7 +71,7 @@
                     </p>
                     <img src="images/about-image.JPG" class="about-me-image">
                 </div>
-                <div class="about-paragraph2">
+                <div class="about-paragraph2 body-font" >
                     lorem ipsum dolor sit amet consectetur adipiscing elit id mauris hac rutrum leo iaculis
                     interdum nec cubilia taciti vestibulum habitant quis eleifend nam tincidunt gravida blandit
                     facilisis quam lacinia metus etiam semper platea tristique parturient proin risus nisi
@@ -82,13 +82,42 @@
                     aliquet sollicitudin varius commodo augue netus curabitur nunc vitae justo eros condimentum
                 </div>
             </div>
-
+            <div id="goals-container" class="goals-container">
+                <h1 class="goals-header content-header"> Goals </h1>
+                <div class="goals-content card">
+                    <div class="goals-slides slide-animation" style="display: flex !important">
+                        <h1> #1: </h1>
+                        <p class="body-font"> lorem ipsum dolor sit amet consectetur adipiscing elit id mauris hac rutrum leo iaculis
+                            interdum nec cubilia taciti vestibulum habitant quis eleifend nam tincidunt gravida blandit
+                            facilisis quam lacinia metus etiam semper platea tristique parturient proin risus nisi
+                            maximus pharetra potenti felis suscipit sodales ornare imperdiet natoque eu litora vel dui </p>
+                    </div>
+    
+                    <div class="goals-slides slide-animation">
+                        <h1> #2: </h1>
+                        <p class="body-font"> lorem ipsum dolor sit amet consectetur adipiscing elit id mauris hac rutrum leo iaculis
+                            interdum nec cubilia taciti vestibulum habitant quis eleifend nam tincidunt gravida blandit
+                            facilisis quam lacinia metus etiam semper platea tristique parturient proin risus nisi
+                            maximus pharetra potenti felis suscipit sodales ornare imperdiet natoque eu litora vel dui </p>
+                    </div>
+    
+                    <div class="goals-slides slide-animation">
+                        <h1> #3: </h1>
+                        <p class="body-font"> lorem ipsum dolor sit amet consectetur adipiscing elit id mauris hac rutrum leo iaculis
+                            interdum nec cubilia taciti vestibulum habitant quis eleifend nam tincidunt gravida blandit
+                            facilisis quam lacinia metus etiam semper platea tristique parturient proin risus nisi
+                            maximus pharetra potenti felis suscipit sodales ornare imperdiet natoque eu litora vel dui </p>
+                    </div>
+                    <button class="slide-button slide-button-left" onclick="changeSlide(-1)">&#10094;</button>
+                    <button class="slide-button slide-button-right" onclick="changeSlide(1)">&#10095;</button>
+                </div>      
+            </div>
             <div id="experience-container" class="experience-container">
-                <h1 class="experience-header"> Experience </h1>
+                <h1 class="experience-header content-header"> Experience </h1>
             </div>
 
-            <div id="skills-container" clsas="skills-container">
-                <h1 class="skills-header"> Skills </h1>
+            <div id="skills-container" class="skills-container">
+                <h1 class="skills-header content-header"> Skills </h1>
                 <div class="skills">
                     <div class="skills-content">
                         <button class="skills-content-front">
@@ -97,7 +126,7 @@
                             <img src="images/arrow.png" class="skills-arrow">
                         </button>
                         <div class="skills-content-back">
-                                <p class="skills-description"> Description </p>
+                            <p class="skills-description body-font"> Description </p>
                         </div>
                     </div>
                     <div class="skills-content">
@@ -107,7 +136,7 @@
                             <img src="images/arrow.png" class="skills-arrow">
                         </button>
                         <div class="skills-content-back">
-                            <p class="skills-description"> Description </p>
+                            <p class="skills-description body-font"> Description </p>
                         </div>
                     </div>
                     <div class="skills-content">
@@ -117,7 +146,7 @@
                             <img src="images/arrow.png" class="skills-arrow">
                         </button>
                         <div class="skills-content-back">
-                            <p class="skills-description"> Description </p>
+                            <p class="skills-description body-font"> Description </p>
                         </div>
                     </div>
                     <div class="skills-content">
@@ -127,7 +156,7 @@
                             <img src="images/arrow.png" class="skills-arrow">
                         </button>
                         <div class="skills-content-back">
-                            <p class="skills-description"> Description </p>
+                            <p class="skills-description body-font"> Description </p>
                         </div>
                     </div>
                     <div class="skills-content">
@@ -137,25 +166,23 @@
                             <img src="images/arrow.png" class="skills-arrow">
                         </button>
                         <div class="skills-content-back">
-                            <p class="skills-description"> Description </p>
+                            <p class="skills-description body-font"> Description </p>
                         </div>
                     </div>
                     <div class="skills-content">
                         <button class="skills-content-front">
                             <img src="images/adaptibility-skill.png" class="skills-icon">
                             <h3> Adaptibility </h3>
-                            <img src="images/arrow.png" class="skills-arrow">                
+                            <img src="images/arrow.png" class="skills-arrow">
                         </button>
                         <div class="skills-content-back">
-                            <p class="skills-description"> Description </p>
+                            <p class="skills-description body-font"> Description </p>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div id="goals-container" class="goals-container">
-                <h1 class="goals-header"> Goals </h1>
-            </div>
+            
         </div>
 
     </div>
