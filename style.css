@@ -9,6 +9,7 @@
     --accent-color: #0b0d0f;
     --header-color: #fbf9f7;
     --background-color: #F5F5F5;
+    --background-color-light: #FCFCFC;
     --header-font-size: calc(4rem + 0.3vh);
     --subheader-font-size: calc(2rem + 0.3vh);
     --body-font-size: calc(1rem + 0.3vw);
@@ -28,7 +29,7 @@ html {
 }
 
 body {
-    background-color: var(--background-color);
+    background-color: var(--background-color-light);
 
 }
 
@@ -184,6 +185,13 @@ button:hover {
         font-size: var(--logo-font-size);
     }
 
+    .skills {
+        display: grid;
+        grid-template-columns: repeat(auto-fit,
+                minmax(200px, 1fr));
+        gap: 1rem;
+    }
+
 }
 
 @media (min-width:1000px) {
@@ -267,6 +275,12 @@ button:hover {
     .logo {
         user-select: none;
         font-size: var(--logo-font-size);
+    }
+
+    .skills {
+        display: grid;
+        grid-template: repeat(2, 1fr) / repeat(3, 1fr);
+        gap: 3rem;
     }
 }
 
@@ -457,38 +471,63 @@ button:hover {
 
 /*         have to put this in the different media size           */
 
-.skills {
-    display: grid;
-    grid-template: repeat(2, 1fr) / repeat(3, 1fr);
-    gap: 3rem;
+
+.skills-icon {
+    max-width: 20%;
 }
 
 .skills>div {
+    background-color: var(--background-color);
+    border-radius: 1rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     align-content: center;
     justify-content: center;
-    justify-content: center;
     text-align: center;
-    padding: 3rem 2rem 3rem 2rem;
-    gap: 1rem;
-
+    padding: 3rem 1rem;
+    transition-duration: 0.5s;
 }
 
 .skills-description {
-    margin-top: 1rem;
-}
-
-.skills img {
-    max-width: 25%;
+    margin-top: 2rem;
 }
 
 .skills-header {
     text-align: center;
     font-size: var(--content-header-font-size);
-    padding: 1rem;
+    padding: 3rem;
+}
+
+.skills>div:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
 }
 
 
-  
+/* This container is needed to position the front and back side */
+.skills-content {
+    transition: transform 0.5s;
+    transform-style: preserve-3d;
+}
+
+.skills-content:focus-within {
+    transform: rotateY(180deg);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
+}
+
+.skills-content-front,
+.skills-content-back {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border:none;
+    background-color: transparent;
+}
+
+.skills-content-back {
+    position: absolute;
+    transform: rotateY(180deg);
+}
+
+.skills-arrow {
+    max-width: 10%;
+}
