@@ -6,7 +6,7 @@
     --font-color-unfocus: #666666;
     --font-color-dark: #333333;
     --font-color-light: #F5F5F5;
-    --accent-color: #FD4949;
+    --accent-color: #0B090A;
     --header-color: #fbf9f7;
     --background-color: #F5F5F5;
     --background-color-light: #FCFCFC;
@@ -242,7 +242,7 @@ button:hover {
         all: unset;
         padding: .03rem;
         z-index: -2;
-        background-image: linear-gradient(to right, transparent 50%, #FD4949CF 50%);
+        background-image: linear-gradient(to right, transparent 50%, #0B090A0F 50%);
         background-size: 200%;
         transition: background-position 0.5s ease-in-out;
     }
@@ -410,7 +410,7 @@ button:hover {
 .contact-button-light {
     all: unset;
     color: var(--font-color-light);
-    border: 2px solid var(--accent-color);
+    border: 2px solid var(--font-color-light);
     border-radius: 10rem;
     padding: 1.5rem 3rem;
     transition-duration: 0.5s;
@@ -419,9 +419,9 @@ button:hover {
 }
 
 .contact-button-light:hover {
-    background: var(--accent-color);
-    color: var(--font-color-light);
-    box-shadow: 0 4px 8px 0 #FD49498F;
+    background: var(--font-color-light);
+    color: var(--font-color-dark);
+    box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.2);
 }
 
 .logo-light a {
@@ -565,25 +565,13 @@ button:hover {
 
 .goals-slides {
     display: none;
-    width: 50%;
+    width: 90%;
     flex-direction: column;
     align-content: center;
     text-align: center;
     gap: 3rem;
     padding: 2rem 0;
    
-}
-
-.slide-animation {
-    animation: opac 0.8s;
-    animation-duration: 0.8s;
-    animation-timing-function: ease;
-    animation-delay: 0s;
-    animation-iteration-count: 1;
-    animation-direction: normal;
-    animation-fill-mode: none;
-    animation-play-state: running;
-    animation-name: opac;
 }
 
 .slide-button-right,
@@ -607,11 +595,11 @@ button:hover {
 .slide-button-left {
     transform: translate(0%, -50%);
     -ms-transform: translate(-0%, -50%);
-    left: 12.5%;
+    left: -5%;
 }
 
 .slide-button-right {
     transform: translate(0%, -50%);
     -ms-transform: translate(0%, -50%);
-    right: 12.5%;
+    right: -5%;
 }
