@@ -34,11 +34,12 @@ table of contents
     --font-color-light: #F5F5F5;
     --accent-color: #0B090A;
     --header-color: #fbf9f7;
-    --background-color: #F5F5F5;
+    --background-color: #F9F9F9;
     --background-color-light: #FCFCFC;
     --header-font-size: calc(4rem + 0.3vh);
     --subheader-font-size: calc(2rem + 0.3vh);
     --body-font-size: calc(1rem + 0.3vw);
+    --body-header-font-size: calc(1.5rem + 0.4vw);
     --nav-font-size: calc(1rem + 0.4vh);
     --logo-font-size: calc(1rem + 0.5vh);
     --content-header-font-size: calc(2rem + 0.5vw);
@@ -62,6 +63,10 @@ body {
     font-size: var(--body-font-size);
 }
 
+.body-header-font {
+    font-size: var(--body-header-font-size);
+}
+
 .content-header {
     font-size: var(--content-header-font-size);
     color: var(--color-dark);
@@ -74,13 +79,13 @@ body {
     font-family: var(--font);
     color: var(--font-color-dark);
     display: grid;
-    grid-template: 99vh 3fr 1fr 70vh / .1fr 1fr .1fr;
+    grid-template: 99vh 3fr 1fr 80vh / .1fr 1fr .1fr;
     gap: 10px;
 }
 
-/*===================
+/*======================================
 2. media styles
-===================*/
+======================================*/
 @media (max-width: 1399px) {
 
     .about-intro,
@@ -178,6 +183,16 @@ body {
         font-size: var(--logo-font-size);
     }
 
+    .slide {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        background: var(--background-color);
+    }
+
     .skills {
         display: grid;
         grid-template-columns: repeat(auto-fit,
@@ -270,6 +285,17 @@ body {
         font-size: var(--logo-font-size);
     }
 
+
+    .slide {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        background: var(--background-color);
+    }
+
     .skills {
         display: grid;
         grid-template: repeat(2, 1fr) / repeat(3, 1fr);
@@ -277,9 +303,9 @@ body {
     }
 }
 
-/*===================
+/*======================================
 3. navigation bar styles
-===================*/
+======================================*/
 .navbar {
     z-index: 1;
     grid-column: 1 / span 3;
@@ -343,9 +369,9 @@ body {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
-/*===================
+/*======================================
 4. header styles
-===================*/
+======================================*/
 
 .header-container {
     position: relative;
@@ -366,9 +392,15 @@ body {
 }
 
 
-/*===================
+/*======================================
 5. about me styles
-===================*/
+======================================*/
+.about-background {
+    position: relative;
+    margin: -100px;
+    background: black;
+}
+
 .content-container {
     position: relative;
     grid-column: 2 / span 1;
@@ -396,18 +428,18 @@ body {
     max-width: 90%;
 }
 
-/*===================
+/*======================================
 6. goals styles
-===================*/
+======================================*/
 .goals-container>h1 {
-    padding: 2rem;
+    padding: 3rem;
     text-align: center;
 }
 
 .goals-slideshow {
     position: relative;
     width: 80%;
-    height: 600px;
+    height: 70vh;
     margin: 0 auto;
 }
 
@@ -420,30 +452,21 @@ body {
 
 .goals-slideshow-content {
     background: var(--background-color);
-    overflow:hidden;
+    overflow: hidden;
     height: 100%;
     object-fit: cover;
     position: relative;
+    border-radius: .5rem;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
 .slideshow {
     list-style: none;
     position: relative;
     height: 100%;
-    transition: transform 0.5s ease-in-out;
+    transition: transform 0.75s ease-in-out;
 }
 
-.slide {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat(auto-fit,
-            minmax(300px, 1fr));
-    gap: 1rem;
-    background: var(--background-color);
-}
 
 .slideshow-button {
     position: absolute;
@@ -452,14 +475,18 @@ body {
     background: transparent;
     border: none;
     font-size: var(--subheader-font-size);
+    font-weight: 900;
     cursor: pointer;
     opacity: 0.5;
     transition-duration: 0.3s;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
 
 .slideshow-button:hover {
-    opacity:1;
+    text-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+    opacity: 1;
 }
+
 .slideshow-button-left {
     left: -50px;
 }
@@ -472,29 +499,29 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 15px;
     padding: 30px 0;
 }
 
-.slide-indicator { 
+.slide-indicator {
     border-radius: 50%;
-    background:transparent;
+    background: transparent;
     width: 15px;
     height: 15px;
     color: var(--accent-color);
     transition-duration: 0.3s;
-    cursor:pointer;
+    cursor: pointer;
+    margin: 0 15px;
 }
 
-.slide-indicator-hover {
+.not-current-slide {
     opacity: 0.3;
     border: 1px solid var(--accent-color);
     transition-duration: 0.3s;
 }
 
-.slide-indicator-hover:hover {
+.not-current-slide:hover {
     background: var(--accent-color);
-    opacity:.5;    
+    opacity: .5;
 }
 
 .slide-indicator.current-slide {
@@ -505,9 +532,29 @@ body {
     display: none;
 }
 
-/*===================
+.slideshow-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 3vh;
+    align-items: center;
+    padding: 3rem 2.5rem;
+    text-align: center;
+}
+
+.goals-icon {
+    min-width: 10%;
+    width: 20%;
+    opacity: 0.75;
+}
+
+.goals-date {
+    margin: 2rem 0;
+}
+
+/*======================================
 7. skills styles
-===================*/
+======================================*/
 .skills-icon {
     max-width: 20%;
 }
@@ -549,6 +596,7 @@ body {
 .skills-content {
     transition-duration: 0.5s;
     transform-style: preserve-3d;
+    cursor: pointer;
 }
 
 .skills-content:focus-within {
@@ -562,6 +610,7 @@ body {
     backface-visibility: hidden;
     border: none;
     background-color: transparent;
+    cursor: pointer;
 }
 
 .skills-content-back {
@@ -576,14 +625,14 @@ body {
 }
 
 
-/*===================
+/*======================================
 8. experience styles
-===================*/
+======================================*/
 
 
-/*===================
+/*======================================
 9. footer styles
-===================*/
+======================================*/
 .footer-container {
     position: relative;
     grid-column: 1 / span 3;
@@ -599,7 +648,7 @@ body {
     position: absolute;
     display: grid;
     width: 100%;
-    grid-template: 15vh 15vh 15vh 10vh 5vh / 5rem 1fr 5rem;
+    grid-template: 25vh 15vh 15vh 10vh 5vh / 5rem 1fr 5rem;
     gap: 2.5rem;
     padding: 2.5rem 0;
     align-items: center;
@@ -627,7 +676,7 @@ body {
     align-content: center;
     align-items: center;
     width: 80%;
-    font-size: 24px;
+    font-size: var(--nav-font-size);
 }
 
 .footer-links {
@@ -663,6 +712,7 @@ body {
     color: var(--font-color-unfocus);
     grid-row: 5;
     grid-column: 2;
+    line-height: 1.75rem;
 }
 
 .footer-text {
@@ -711,4 +761,15 @@ body {
     border: 3px solid var(--background-color);
     border-radius: 3px;
     width: 100%;
+}
+
+.footer-message-link {
+    text-decoration: none;
+    color: var(--font-color-unfocus);
+    transition-duration: 0.5s;
+}
+
+.footer-message-link:hover {
+    text-decoration: none;
+    color: var(--font-color-light);
 }

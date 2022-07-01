@@ -28,8 +28,8 @@ const moveToSlide = (track, currentSlide, targetSlide) => {
 
 const updateDots = (currentDot, targetDot) => {
     currentDot.classList.remove('current-slide');
-    currentDot.classList.add('slide-indicator-hover');
-    targetDot.classList.remove('slide-indicator-hover');
+    currentDot.classList.add('not-current-slide');
+    targetDot.classList.remove('not-current-slide');
     targetDot.classList.add('current-slide');
 }
 
