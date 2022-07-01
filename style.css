@@ -414,6 +414,7 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    mix-blend-mode: multiply;
 }
 
 .goals-slideshow-content {
@@ -436,6 +437,11 @@ body {
     top: 0;
     bottom: 0;
     width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,
+            minmax(300px, 1fr));
+    gap: 1rem;
+    background: var(--background-color);
 }
 
 .slideshow-button {
@@ -446,35 +452,52 @@ body {
     border: none;
     font-size: var(--subheader-font-size);
     cursor: pointer;
+    opacity: 0.5;
+    transition-duration: 0.3s;
 }
 
+.slideshow-button:hover {
+    opacity:1;
+}
 .slideshow-button-left {
-    left: -40px;
+    left: -50px;
 }
 
 .slideshow-button-right {
-    right: -40px;
+    right: -50px;
 }
 
 .slideshow-nav {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
-    padding: 10px 0;
+    gap: 15px;
+    padding: 30px 0;
 }
 
-.slide-indicator {
-    border: none;
+.slide-indicator { 
     border-radius: 50%;
+    background:transparent;
     width: 15px;
     height: 15px;
-    background: rgba(0,0,0,0.3);
+    color: var(--accent-color);
+    transition-duration: 0.3s;
     cursor:pointer;
 }
 
+.slide-indicator-hover {
+    opacity: 0.3;
+    border: 1px solid var(--accent-color);
+    transition-duration: 0.3s;
+}
+
+.slide-indicator-hover:hover {
+    background: var(--accent-color);
+    opacity:.5;    
+}
+
 .slide-indicator.current-slide {
-    background: rgba(0, 0, 0, .8)
+    background: var(--accent-color);
 }
 
 .is-hidden {
@@ -489,7 +512,7 @@ body {
 }
 
 .skills>div {
-    background-color: var(--background-color);
+    background-color: var(--background-color-light);
     border-radius: .5rem;
     display: flex;
     flex-direction: column;
@@ -550,6 +573,7 @@ body {
     opacity: 0.5;
     transition-duration: 0.5s;
 }
+
 
 /*===================
 8. experience styles
