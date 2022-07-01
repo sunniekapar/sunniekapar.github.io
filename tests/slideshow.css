@@ -1,0 +1,26 @@
+.goals-slideshow {
+    position: relative;
+    width: 80%;
+    height: 600px;
+    margin: 0 auto;
+}
+
+.slideshow-image {
+    width: 100%;
+}
+
+.goals-slideshow-content {
+    background: var(--accent-color);
+    padding: 10px;
+}
+
+.slideshow {
+    list-style: none;
+}
+
+.slide {
+    position: absolute;
+    bottom:0;
+    top: 0;
+    width: 100%;
+}
