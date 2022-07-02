@@ -4,21 +4,22 @@ const nextButton = document.querySelector('.slideshow-button-right');
 const prevButton = document.querySelector('.slideshow-button-left');
 const dotsNav = document.querySelector('.slideshow-nav');
 const dots = Array.from(dotsNav.children);
-var windowSize = innerWidth;
-var slideWidth = slides[0].getBoundingClientRect().width;
+
+var windowSize = innerWidth; //width of the screen
+var slideWidth = slides[0].getBoundingClientRect().width; // width of the slide
 
 
 const setSlidePosition = (slide, index) => {
     var newWindowSize = innerWidth;
-    const scaleFac = newWindowSize/windowSize;
+    const scaleFac = newWindowSize/windowSize; 
     windowSize = newWindowSize;
     slideWidth *= scaleFac;
     slide.style.left= slideWidth * index + 'px';
 }
 
-slides.forEach(setSlidePosition);
+slides.forEach(setSlidePosition);  
 
-window.addEventListener('resize', setSlidePosition);
+window.addEventListener('resize', setSlidePosition); // whenever someone resizes screen
 
 const moveToSlide = (track, currentSlide, targetSlide) => {
     track.style.transform = 'translateX(-' + targetSlide.style.left + ')';

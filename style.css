@@ -342,7 +342,7 @@ body {
     transform: scaleX(0);
     height: 2px;
     transform-origin: bottom right;
-    transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-out;
     background: var(--accent-color);
 
 }
@@ -350,8 +350,11 @@ body {
 .navitem:hover::after {
     transform: scaleX(.5);
     transform-origin: bottom right;
-    transition: transform 150ms ease-in-out;
-    transition-duration: 0.5s;
+    transition: transform .3s ease-out;   
+}
+
+.navitem:active::after {
+    transform: scaleX(1);
 }
 
 .contact-button {
@@ -628,8 +631,47 @@ body {
 /*======================================
 8. experience styles
 ======================================*/
+.experience-cards-container {
+    display:grid;
+    grid-template-rows: repeat(4, 1fr);
+    gap: 4rem;
+    padding: 4rem 0;
+}
 
+.experience-cards {
+    display:grid;
+    grid-template-columns: 1fr 3fr;
+    height: 20vh;
+    gap: 1rem;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: .5rem;
+}
 
+.experience-cards-date,
+.experience-cards-content {
+    display:flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    padding: 1rem;
+    
+}
+
+.experience-cards-date {
+    align-items: center !important;
+    background-color: var(--accent-color);
+    color: var(--font-color-light);
+    border-radius: .5rem 0 0 .5rem;
+}
+
+.experience-cards-content {
+    gap: .5rem;
+    background: var(--background-color);
+}
+
+.experience-title {
+    color: var(--font-color-light) !important;
+}
 /*======================================
 9. footer styles
 ======================================*/
@@ -643,7 +685,7 @@ body {
 }
 
 .footer-content {
-    background-color: var(--color-dark);
+    background-color: var(--accent-color);
     font-weight: bold;
     position: absolute;
     display: grid;
