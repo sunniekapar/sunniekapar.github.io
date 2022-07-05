@@ -41,7 +41,6 @@ table of contents
     --body-font-size: calc(1rem + 0.3vw);
     --body-header-font-size: calc(1.5rem + 0.4vw);
     --nav-font-size: calc(1rem + 0.4vh);
-    --logo-font-size: calc(1rem + 0.5vh);
     --content-header-font-size: calc(2rem + 0.5vw);
 }
 
@@ -178,11 +177,6 @@ body {
         border-radius: 10px;
     }
 
-    .logo {
-        user-select: none;
-        font-size: var(--logo-font-size);
-    }
-
     .slide {
         position: absolute;
         top: 0;
@@ -280,11 +274,6 @@ body {
         display: none;
     }
 
-    .logo {
-        user-select: none;
-        font-size: var(--logo-font-size);
-    }
-
 
     .slide {
         position: absolute;
@@ -311,6 +300,11 @@ body {
     grid-column: 1 / span 3;
     grid-row: 1 / span 1;
 }
+
+.logo {
+    max-width: 30%;
+    min-width: 54px;
+ }
 
 .nav-links ul {
     display: flex;
@@ -691,7 +685,7 @@ body {
     display: grid;
     width: 100%;
     grid-template: 25vh 15vh 15vh 10vh 5vh / 5rem 1fr 5rem;
-    gap: 2.5rem;
+    gap: 2rem;
     padding: 2.5rem 0;
     align-items: center;
     justify-content: space-evenly;
@@ -718,7 +712,21 @@ body {
     align-content: center;
     align-items: center;
     width: 80%;
-    font-size: var(--nav-font-size);
+}
+
+.footer-logo a {
+    display:flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+.footer-logo img {
+    max-width: 50%;
+    opacity: 0.75;
+    transition-duration: 0.5s;
+}
+
+.footer-logo img:hover {
+    opacity: 1;
 }
 
 .footer-links {
@@ -775,28 +783,13 @@ body {
     padding: 1.5rem 3rem;
     transition-duration: 0.5s;
     font-size: 1.5rem;
+    cursor: pointer;
 }
 
 .contact-button-light:hover {
     background: var(--font-color-light);
     color: var(--font-color-dark);
     box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.2);
-}
-
-.logo-light a {
-    display: flex;
-    justify-content: center;
-    transition-duration: .5s;
-    text-decoration: none;
-    user-select: none;
-    color: var(--font-color-light);
-    opacity: .5;
-    padding: 2rem;
-    max-width: 100%;
-}
-
-.logo-light a:hover {
-    opacity: 1;
 }
 
 .footer-logo hr {
