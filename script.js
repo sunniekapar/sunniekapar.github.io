@@ -1,6 +1,6 @@
 const track = document.querySelector('.slideshow');
 const slides = Array.from(track.children);
-const nextButton = document.querySelector('.slideshow-button-right'); 
+const nextButton = document.querySelector('.slideshow-button-right');
 const prevButton = document.querySelector('.slideshow-button-left');
 const dotsNav = document.querySelector('.slideshow-nav');
 const dots = Array.from(dotsNav.children);
@@ -10,16 +10,21 @@ var slideWidth = slides[0].getBoundingClientRect().width; // width of the slide
 
 
 const setSlidePosition = (slide, index) => {
-    var newWindowSize = innerWidth;
-    const scaleFac = newWindowSize/windowSize; 
-    windowSize = newWindowSize;
-    slideWidth *= scaleFac;
-    slide.style.left= slideWidth * index + 'px';
+    slide.style.left = slideWidth * index + 'px';
 }
 
-slides.forEach(setSlidePosition);  
+slides.forEach(setSlidePosition);
 
-window.addEventListener('resize', setSlidePosition); // whenever someone resizes screen
+function resizeSlides() {
+    var newWindowSize = innerWidth;
+    const scaleFac = newWindowSize / windowSize;
+    windowSize = newWindowSize;
+    slideWidth *= scaleFac;
+    for (var i = 0; i < slides.length; i++) {
+        slides[i].style.left = slideWidth * i + 'px';
+    }
+}
+window.addEventListener('resize', resizeSlides); // whenever someone resizes screen
 
 const moveToSlide = (track, currentSlide, targetSlide) => {
     track.style.transform = 'translateX(-' + targetSlide.style.left + ')';
@@ -35,10 +40,10 @@ const updateDots = (currentDot, targetDot) => {
 }
 
 const updateButtons = (targetIndex, prevButton, nextButton, dots) => {
-    if(targetIndex === 0) {
+    if (targetIndex === 0) {
         prevButton.classList.add('is-hidden');
         nextButton.classList.remove('is-hidden');
-    } else if(targetIndex == dots.length -1) {
+    } else if (targetIndex == dots.length - 1) {
         nextButton.classList.add('is-hidden');
         prevButton.classList.remove('is-hidden');
     } else {
@@ -53,7 +58,7 @@ nextButton.addEventListener('click', e => {
     const nextSlide = currentSlide.nextElementSibling;
     const currentDot = dotsNav.querySelector('.current-slide');
     const nextDot = currentDot.nextElementSibling;
-    const nextIndex = slides.findIndex( slide => slide === nextSlide);
+    const nextIndex = slides.findIndex(slide => slide === nextSlide);
     moveToSlide(track, currentSlide, nextSlide);
     updateDots(currentDot, nextDot);
     updateButtons(nextIndex, prevButton, nextButton, dots);
@@ -74,7 +79,7 @@ prevButton.addEventListener('click', e => {
 dotsNav.addEventListener('click', e => {
     // what button was clicked
     const targetDot = e.target.closest('button');
-    if(!targetDot) return; // if user does not click on button
+    if (!targetDot) return; // if user does not click on button
     const currentSlide = track.querySelector('.current-slide');
     const currentDot = dotsNav.querySelector('.current-slide');
     const targetIndex = dots.findIndex(dot => dot === targetDot);
@@ -85,3 +90,34 @@ dotsNav.addEventListener('click', e => {
 });
 
 
+///////////////////////// NAV BURGER //////////////////////////////////////
+const navButton = document.querySelector('.nav-burger');
+const navItems = document.querySelector('.nav-links');
+const overlay = document.querySelector('.overlay-hidden');
+const navLinks = document.querySelectorAll('.navitem');
+
+let navOpen = false;
+navButton.addEventListener('click', () => {
+    if (!navOpen) {
+        navButton.classList.add('open');
+        navItems.classList.add('openNav');
+        overlay.classList.remove('overlay-hidden');
+        navOpen = true;
+    } else {
+        navButton.classList.remove('open');
+        navItems.classList.remove('openNav');
+        overlay.classList.add('overlay-hidden');
+        navOpen = false;
+    }
+});
+
+navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        if (navOpen) {
+            navButton.classList.remove('open');
+            navItems.classList.remove('openNav');
+            overlay.classList.add('overlay-hidden');
+            navOpen = false;
+        }
+    });
+});

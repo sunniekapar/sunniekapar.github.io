@@ -82,6 +82,22 @@ body {
     gap: 10px;
 }
 
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    transition: all 0.5s;
+    backdrop-filter: blur(2px);
+}
+
+.overlay-hidden {
+    visibility: hidden;
+    opacity: 0;   
+}
+
 /*======================================
 2. media styles
 ======================================*/
@@ -146,35 +162,95 @@ body {
         justify-content: space-between;
         align-items: center;
         height: var(--navbar-height);
-        padding-left: 5rem;
-        padding-right: 5rem;
-        z-index: 100;
+        padding-left: 2.5rem;
+        padding-right: 2.5rem;
         background: rgba(255, 255, 255, 0.95);
     }
 
-    .nav-burger button {
-        all: unset;
-        width: 30px;
-        height: 35px;
+    .nav-links {
+        position: fixed;
+        right: 0;
+        height: 100vh;
+        width: 50%;
+        top: 0;
         display: flex;
         flex-direction: column;
-        align-content: center;
-        justify-content: space-evenly;
-        padding: 5px;
+        justify-content: center;
+        align-items: center;
+        background-color: white;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+        text-align: center;
     }
 
-    .nav-links {
-        display: none;
+    .nav-links.openNav {
+        transform: translateX(0%);
+        transition: transform 0.5s ease-in;
     }
 
-    .nav-burger button:focus-within .nav-links {
-        background: black;
+    .nav-links li {
+        list-style: none;
+        margin: 5rem 0;
+    }
+
+    .navitem a {
+        text-decoration: none;
+        color: var(--font-color-dark);
+    }
+
+    .nav-burger {
+        position: relative;
         display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+        transition: all .5s ease-in-out;
     }
 
-    .nav-burger hr {
-        border: 2px solid var(--font-color-unfocus);
-        border-radius: 10px;
+    .nav-burger-button {
+        width: 30px;
+        height: 4px;
+        background: var(--accent-color);
+        border-radius: 6px;
+        box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+        transition: all .5s ease-in-out;
+        z-index: 100 !important;
+    }
+
+    .nav-burger-button::before,
+    .nav-burger-button::after {
+        position: absolute;
+        content: '';
+        width: 30px;
+        height: 4px;
+        background: var(--accent-color);
+        border-radius: 6px;
+        box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+        transition: all .5s ease-in-out;
+    }
+
+    .nav-burger-button::before {
+        transform: translateY(-10px);
+    }
+
+    .nav-burger-button::after {
+        transform: translateY(10px);
+    }
+
+    .nav-burger.open .nav-burger-button {
+        transform: translateX(-50px);
+        background: transparent;
+        box-shadow: none;
+    }
+
+    .nav-burger.open .nav-burger-button::before {
+        transform: rotate(45deg) translate(35px, -35px);
+    }
+
+    .nav-burger.open .nav-burger-button::after {
+        transform: rotate(-45deg) translate(35px, 35px);
     }
 
     .slide {
@@ -255,6 +331,51 @@ body {
     }
 
     /*                                                   */
+    .nav-links ul {
+        display: flex;
+        align-items: center;
+        margin-top: 5px;
+        list-style: none;
+        font-size: var(--nav-font-size);
+        gap: 5rem;
+    }
+
+    .navbar a,
+    .navbar button {
+        color: var(--accent-color);
+        text-decoration: none;
+        opacity: 0.6;
+        transition-duration: 0.5s;
+    }
+
+    .navbar a:hover,
+    .navbar button:hover {
+        opacity: 1;
+    }
+
+    .navitem a::after {
+        content: '';
+        display: flex;
+        position: relative;
+        width: 100%;
+        transform: scaleX(0);
+        height: 2px;
+        transform-origin: bottom right;
+        transition: transform 0.3s ease-out;
+        background: var(--accent-color);
+
+    }
+
+    .navitem a:hover::after {
+        transform: scaleX(.5);
+        transform-origin: bottom right;
+        transition: transform .3s ease-out;
+    }
+
+    .navitem a:active::after {
+        transform: scaleX(1);
+    }
+
     .navbar {
         font-family: var(--font);
         position: sticky;
@@ -273,7 +394,6 @@ body {
     .nav-burger {
         display: none;
     }
-
 
     .slide {
         position: absolute;
@@ -302,54 +422,11 @@ body {
 }
 
 .logo {
-    max-width: 30%;
+    max-width: 25%;
     min-width: 54px;
- }
-
-.nav-links ul {
-    display: flex;
-    align-items: center;
-    margin-top: 5px;
-    list-style: none;
-    font-size: var(--nav-font-size);
-    gap: 5rem;
 }
 
-.navbar a,
-.navbar button {
-    color: var(--accent-color);
-    text-decoration: none;
-    opacity: 0.6;
-    transition-duration: 0.5s;
-}
 
-.navbar a:hover,
-.navbar button:hover {
-    opacity: 1;
-}
-
-.navitem::after {
-    content: '';
-    display: flex;
-    position: relative;
-    width: 100%;
-    transform: scaleX(0);
-    height: 2px;
-    transform-origin: bottom right;
-    transition: transform 0.3s ease-out;
-    background: var(--accent-color);
-
-}
-
-.navitem:hover::after {
-    transform: scaleX(.5);
-    transform-origin: bottom right;
-    transition: transform .3s ease-out;   
-}
-
-.navitem:active::after {
-    transform: scaleX(1);
-}
 
 .contact-button {
     all: unset;
@@ -626,14 +703,14 @@ body {
 8. experience styles
 ======================================*/
 .experience-cards-container {
-    display:grid;
+    display: grid;
     grid-template-rows: repeat(4, 1fr);
     gap: 4rem;
     padding: 4rem 0;
 }
 
 .experience-cards {
-    display:grid;
+    display: grid;
     grid-template-columns: 1fr 3fr;
     height: 20vh;
     gap: 1rem;
@@ -643,12 +720,12 @@ body {
 
 .experience-cards-date,
 .experience-cards-content {
-    display:flex;
+    display: flex;
     align-items: flex-start;
     justify-content: center;
     flex-direction: column;
     padding: 1rem;
-    
+
 }
 
 .experience-cards-date {
@@ -666,6 +743,7 @@ body {
 .experience-title {
     color: var(--font-color-light) !important;
 }
+
 /*======================================
 9. footer styles
 ======================================*/
@@ -715,10 +793,11 @@ body {
 }
 
 .footer-logo a {
-    display:flex;
+    display: flex;
     justify-content: center;
     margin-bottom: 2rem;
 }
+
 .footer-logo img {
     max-width: 50%;
     opacity: 0.75;
