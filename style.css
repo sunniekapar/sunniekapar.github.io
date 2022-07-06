@@ -91,6 +91,7 @@ body {
     background-color: rgba(0, 0, 0, 0.5);
     transition: all 0.5s;
     backdrop-filter: blur(2px);
+    z-index: 2;
 }
 
 .overlay-hidden {
@@ -110,6 +111,13 @@ body {
     background: var(--background-color-light);
     box-shadow:0 0 3px 3px rgba(0, 0, 0, 0.08);
     border-radius: 0.5rem;
+    transition: all 0.5s;
+    z-index: 3;
+}
+
+.contact-container.contact-container-hidden {
+    visibility: hidden;
+    opacity: 0;
 }
 
 .contact-form {
@@ -209,6 +217,7 @@ body {
         padding-left: 2.5rem;
         padding-right: 2.5rem;
         background: rgba(255, 255, 255, 0.95);
+        z-index: 5 !important;
     }
 
     .nav-links {
@@ -235,6 +244,7 @@ body {
     .nav-links li {
         list-style: none;
         margin: 5rem 0;
+        
     }
 
     .navitem a {
@@ -479,6 +489,7 @@ body {
     border-radius: 10rem;
     padding: 1rem 2rem;
     transition-duration: 0.5s;
+    cursor:pointer;
 }
 
 .contact-button:hover {

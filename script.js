@@ -121,3 +121,34 @@ navLinks.forEach(link => {
         }
     });
 });
+
+////////////////// conctact form ////////////////////
+const contactButton = document.querySelectorAll('.contactBtn');
+const closeButton = document.querySelector('.contact-form-close');
+const contactForm = document.querySelector('.contact-container');
+let contactFormOpen = false;
+
+contactButton.forEach(button => {
+    button.addEventListener('click', () => {
+        if (!contactFormOpen) {
+            contactForm.classList.remove('contact-container-hidden');
+            overlay.classList.remove('overlay-hidden');
+            contactFormOpen = true;
+        } else {
+            contactForm.classList.add('contact-container-hidden');
+            overlay.classList.add('overlay-hidden');
+            contactFormOpen = false;
+        }
+    });
+});
+
+closeButton.addEventListener('click', () => {
+    if (!contactFormOpen) {
+        contactForm.classList.remove('contact-container-hidden');
+        contactFormOpen = true;
+    } else {
+        contactForm.classList.add('contact-container-hidden');
+        overlay.classList.add('overlay-hidden');
+        contactFormOpen = false;
+    }
+});
