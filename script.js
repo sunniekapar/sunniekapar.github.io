@@ -152,3 +152,16 @@ closeButton.addEventListener('click', () => {
         contactFormOpen = false;
     }
 });
+
+//////////////////////////////////////// need to fix
+const sendMessageBtn = document.querySelector('.send-message-button');
+sendMessageBtn.addEventListener('click', () => {
+    if (!contactFormOpen) {
+        contactForm.classList.remove('contact-container-hidden');
+        contactFormOpen = true;
+    } else {
+        contactForm.classList.add('contact-container-hidden');
+        overlay.classList.add('overlay-hidden');
+        contactFormOpen = false;
+    }
+})
