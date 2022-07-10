@@ -236,6 +236,15 @@ body {
         max-width: 40%;
     }
 
+    .header-content div {
+        padding: 1rem;
+    }
+    .header-content-title {
+        font-size: 3rem !important;
+    }
+    .header-content-subtitle {
+        font-size: 1.5rem !important;
+    }
     .navbar {
         font-family: var(--font);
         font-size: var(--nav-font-size);
@@ -347,6 +356,10 @@ body {
         display: flex;
         flex-direction: column;
         background: var(--background-color);
+    }
+
+    .goals-icon, .slideshow-text h1  {
+        display: none;
     }
 
     .skills {
