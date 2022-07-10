@@ -409,7 +409,6 @@ body {
     .header-hover {
         all: unset;
         padding: .03rem;
-        z-index: -2;
         background-image: linear-gradient(to right, transparent 50%, #0B090A0F 50%);
         background-size: 200%;
         transition: background-position 0.5s ease-in-out;
