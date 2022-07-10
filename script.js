@@ -153,7 +153,7 @@ closeButton.addEventListener('click', () => {
     }
 });
 
-//////////////////////////////////////// need to fix
+/*/////////////////////////////////////// need to fix
 const sendMessageBtn = document.querySelector('.send-message-button');
 sendMessageBtn.addEventListener('click', () => {
     if (!contactFormOpen) {
@@ -164,4 +164,5 @@ sendMessageBtn.addEventListener('click', () => {
         overlay.classList.add('overlay-hidden');
         contactFormOpen = false;
     }
-})
+});
+*/

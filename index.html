@@ -327,26 +327,26 @@
         <div class="overlay overlay-hidden"> </div>
         <div class="contact-container contact-container-hidden">
             <button class="contact-form-close">×</button>
-            <form class="contact-form">
+            <form class="contact-form" action="https://formsubmit.co/your@email.com" method="POST">
                 <div class="contact-form-header">
                     <h1 class="content-header">Let's talk</h1>
-                </div>               
-                <div class="contact-element">
-                    <label for="name">Name:</label><br>
-                    <input type="text" required="">
                 </div>
                 <div class="contact-element">
-                    <label for="email">Email:</label><br>
-                    <input type="text" required="">
+                    <label for="Name">Name:</label> <br>
+                    <input type="text" name="Name" required>
                 </div>
                 <div class="contact-element">
-                    <label for="message">Message:</label><br>
-                    <textarea rows="6" maxlength="3000" placeholder="Hey! How's it going?" required="" spellcheck="false"></textarea>
+                    <label for="Email">Email:</label> <br>
+                    <input type="email" name="Email" required>
+                </div>
+                <div class="contact-element">
+                    <label for="Message">Message:</label> <br>
+                    <textarea name="Message" rows="7" maxlength="3000" placeholder="Hey how's it going?" required></textarea>
                 </div>
                 <div class="send-message">
-                    <button class="send-message-button"> Send Message</button>
-                </div>          
-            </form>      
+                    <button class="send-message-button" type="submit"> Send Message</button>
+                </div>
+            </form>
         </div>
     </div>
     <script src="script.js"></script>
