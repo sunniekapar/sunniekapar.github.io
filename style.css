@@ -740,6 +740,7 @@ body {
     justify-content: center;
     text-align: center;
     padding: 2rem 1rem;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
 }
 
 .skills-content button img,
@@ -757,7 +758,7 @@ body {
 }
 
 .skills-content:hover {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
 }
 
 .skills>div:hover .skills-arrow {
