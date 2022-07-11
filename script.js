@@ -6,7 +6,7 @@ const dotsNav = document.querySelector('.slideshow-nav');
 const dots = Array.from(dotsNav.children);
 
 var windowSize = innerWidth; //width of the screen
-var slideWidth = slides[0].getBoundingClientRect().width; // width of the slide
+var slideWidth = slides[0].getBoundingClientRect().width + 2; // width of the slide
 
 
 const setSlidePosition = (slide, index) => {
@@ -21,7 +21,7 @@ function resizeSlides() {
     windowSize = newWindowSize;
     slideWidth *= scaleFac;
     for (var i = 0; i < slides.length; i++) {
-        slides[i].style.left = slideWidth * i + 'px';
+        slides[i].style.left = slideWidth * i  + 'px';
     }
 }
 window.addEventListener('resize', resizeSlides); // whenever someone resizes screen
@@ -115,9 +115,11 @@ navLinks.forEach(link => {
     link.addEventListener('click', () => {
         if (navOpen) {
             navButton.classList.remove('open');
-            navItems.classList.remove('openNav');
-            overlay.classList.add('overlay-hidden');
+            navItems.classList.remove('openNav');  
             navOpen = false;
+        }
+        if(!navLinks[5]) {
+            overlay.classList.add('overlay-hidden');
         }
     });
 });

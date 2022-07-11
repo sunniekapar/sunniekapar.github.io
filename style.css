@@ -78,7 +78,7 @@ body {
     font-family: var(--font);
     color: var(--font-color-dark);
     display: grid;
-    grid-template: 99vh 3fr 1fr 80vh / .1fr 1fr .1fr;
+    grid-template: 99vh 3fr 1fr 80vh / 1fr 10fr 1fr;
     gap: 10px;
 }
 
@@ -98,7 +98,6 @@ body {
     visibility: hidden;
     opacity: 0;
 }
-
 
 .contact-container {
     left: 30%;
@@ -136,9 +135,9 @@ body {
 
 .contact-element input, textarea {
     font: var(--font);
-    width: 100%;
-    font-size: 0.95rem;
     padding: .5rem;
+    width: calc(100% - 1rem);
+    font-size: 0.95rem;   
     border: 0.8px solid #ddd;
     border-radius: 0.5rem;
     resize: none;
@@ -218,6 +217,18 @@ body {
 }
 
 @media (max-width:999px) {
+    .contact-container {
+        left: 5% !important; 
+        width: 90% !important;
+    }
+    .contact-form {
+        padding: 0 1rem;
+    }
+
+    .contact-element input {
+        height: 15px;
+    }
+
     .header-container {
         display: flex;
         text-align: center;
@@ -612,6 +623,7 @@ body {
     width: 80%;
     height: 70vh;
     margin: 0 auto;
+    
 }
 
 .slideshow-image {
@@ -830,6 +842,7 @@ body {
     opacity: 0;
     transform: translateY(5rem);
 }
+
 .experience-cards-date {
     align-items: center !important;
     background-color: var(--accent-color);
