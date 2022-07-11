@@ -31,7 +31,7 @@ table of contents
     --color-dark: #161A1D;
     --font-color-unfocus: #666666;
     --font-color-dark: #333333;
-    --font-color-light: #F5F5F5;
+    --font-color-light: #F0F0F0;
     --accent-color: #0B090A;
     --header-color: #fbf9f7;
     --background-color: #F9F9F9;
@@ -814,6 +814,7 @@ body {
     gap: 1rem;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     border-radius: .5rem;
+    transition: transform 1s, opacity 1s;
 }
 
 .experience-cards-date,
@@ -825,7 +826,10 @@ body {
     padding: 1rem;
 
 }
-
+.experience-cards-hidden {
+    opacity: 0;
+    transform: translateY(5rem);
+}
 .experience-cards-date {
     align-items: center !important;
     background-color: var(--accent-color);

@@ -153,16 +153,24 @@ closeButton.addEventListener('click', () => {
     }
 });
 
-/*/////////////////////////////////////// need to fix
-const sendMessageBtn = document.querySelector('.send-message-button');
-sendMessageBtn.addEventListener('click', () => {
-    if (!contactFormOpen) {
-        contactForm.classList.remove('contact-container-hidden');
-        contactFormOpen = true;
-    } else {
-        contactForm.classList.add('contact-container-hidden');
-        overlay.classList.add('overlay-hidden');
-        contactFormOpen = false;
-    }
+////////// experience sliding in change this up
+
+const experiences = document.querySelectorAll('.experience-cards');
+const revealExperience = function (experiences, observer) {
+    const [experience] = experiences;
+
+    if (!experience.isIntersecting) return;
+
+    experience.target.classList.remove('experience-cards-hidden');
+    observer.unobserve(experience.target);
+}
+
+const experienceObserver = new IntersectionObserver(revealExperience, {
+    root: null,
+    threshold: 0.1
 });
-*/
+
+experiences.forEach(function (experience) {
+    experienceObserver.observe(experience);
+    experience.classList.add('experience-cards-hidden');
+});
