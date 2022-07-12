@@ -170,29 +170,6 @@ overlay.addEventListener('click', () => {
     openContactContainer(false);
 });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ////////// experience sliding in change this up
 
 const experiences = document.querySelectorAll('.experience-cards');

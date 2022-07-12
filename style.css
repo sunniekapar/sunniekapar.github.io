@@ -184,8 +184,8 @@ body {
 /*======================================
 2. media styles
 ======================================*/
-@media (max-width: 1399px) {
 
+@media (max-width: 1399px) {
     .about-intro,
     .about-paragraph2,
     .about-me-header {
@@ -399,7 +399,6 @@ body {
         grid-column: 1 / span 1;
     }
 
-
     .header-content-subtitle {
         display: flex;
         position: relative;
@@ -521,6 +520,76 @@ body {
     }
 }
 
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 900px) 
+  and (-webkit-min-device-pixel-ratio: 3)
+  and (orientation: landscape) { 
+    .contact-container {
+        height: 90vh;
+        top: 5vh;
+    }
+    .contact-form-header {
+        display: none;
+    }
+    textarea, input {
+        height: 18px !important;
+    }
+
+    .header-container div {
+        margin: 0 !important;
+    }
+
+    .header-content {
+        position: absolute;
+        display: grid;
+        width: 100%;
+        grid-template: 60vh 40vh/ 1fr .5fr;
+    }
+
+    .header-content-title {
+        display: flex;
+        align-content: flex-end;
+        flex-wrap: wrap;
+        position: relative;
+        grid-row: 1 / span 1;
+        grid-column: 1 / span 1;
+    }
+
+    .header-content-subtitle {
+        display: flex;
+        position: relative;
+        grid-row: 2 / span 1;
+        grid-column: 1 / span 1;
+        text-align: left;
+    }
+
+    .header-content-headshot {
+        display: flex;
+        padding-bottom: 0;
+        position: relative;
+        grid-row: 1 / span 2;
+        grid-column: 2 / span 3;
+        justify-content: space-evenly;
+        align-items: flex-end;
+    }
+
+    .header-content img {
+        min-width: 150px;
+        max-width: 90%;
+        max-height: 90%;
+    }
+
+    .header-content div {
+        padding: 0 1rem;
+        margin: 0;
+    }
+    
+    .nav-links li {
+        list-style: none;
+        margin: 2rem 0;
+    }
+}
 /*======================================
 3. navigation bar styles
 ======================================*/
@@ -822,8 +891,6 @@ body {
 .experience-cards {
     display: grid;
     grid-template-columns: 1fr 3fr;
-    height: 20vh;
-    gap: 1rem;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     border-radius: .5rem;
     transition: transform 1s, opacity 1s;
@@ -836,6 +903,7 @@ body {
     justify-content: center;
     flex-direction: column;
     padding: 1rem;
+    border-radius: .5rem;
 
 }
 .experience-cards-hidden {
