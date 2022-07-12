@@ -110,7 +110,7 @@ body {
     background: var(--background-color-light);
     border-radius: 0.5rem;
     transition: all 0.5s;
-    z-index: 3;
+    z-index: 5;
 }
 
 .contact-container.contact-container-hidden {
@@ -322,7 +322,7 @@ body {
         border-radius: 6px;
         box-shadow: 0 2px 1px rgba(0, 0, 0, 0.2);
         transition: all .5s ease-in-out;
-        z-index: 100 !important;
+        z-index: 4 !important;
     }
 
     .nav-burger-button::before,

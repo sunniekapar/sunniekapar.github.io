@@ -9,6 +9,18 @@ var windowSize = innerWidth; //width of the screen
 var slideWidth = slides[0].getBoundingClientRect().width + 2; // width of the slide
 
 
+// nav 
+const navButton = document.querySelector('.nav-burger');
+const navItems = document.querySelector('.nav-links');
+const overlay = document.querySelector('.overlay-hidden');
+const navLinks = document.querySelectorAll('.navitem');
+let navOpen = false;
+
+// contact 
+const contactButton = document.querySelectorAll('.contactBtn');
+const closeButton = document.querySelector('.contact-form-close');
+const contactForm = document.querySelector('.contact-container');
+let contactFormOpen = false;
 const setSlidePosition = (slide, index) => {
     slide.style.left = slideWidth * index + 'px';
 }
@@ -21,7 +33,7 @@ function resizeSlides() {
     windowSize = newWindowSize;
     slideWidth *= scaleFac;
     for (var i = 0; i < slides.length; i++) {
-        slides[i].style.left = slideWidth * i  + 'px';
+        slides[i].style.left = slideWidth * i + 'px';
     }
 }
 window.addEventListener('resize', resizeSlides); // whenever someone resizes screen
@@ -91,69 +103,95 @@ dotsNav.addEventListener('click', e => {
 
 
 ///////////////////////// NAV BURGER //////////////////////////////////////
-const navButton = document.querySelector('.nav-burger');
-const navItems = document.querySelector('.nav-links');
-const overlay = document.querySelector('.overlay-hidden');
-const navLinks = document.querySelectorAll('.navitem');
+function openOverlay(open) {
+    if (open) {
+        overlay.classList.remove('overlay-hidden'); // adds overlay
+    } else {
+        overlay.classList.add('overlay-hidden');   // removes the overlay     
+    }
+}
 
-let navOpen = false;
-navButton.addEventListener('click', () => {
-    if (!navOpen) {
-        navButton.classList.add('open');
-        navItems.classList.add('openNav');
-        overlay.classList.remove('overlay-hidden');
+function openNav(open) {
+    if (open) {
+        navButton.classList.add('open'); // closes nav burger
+        navItems.classList.add('openNav'); // closes side navigation bar
         navOpen = true;
     } else {
-        navButton.classList.remove('open');
-        navItems.classList.remove('openNav');
-        overlay.classList.add('overlay-hidden');
+        navButton.classList.remove('open'); // closes nav burger
+        navItems.classList.remove('openNav'); // closes side navigation bar
         navOpen = false;
+    }
+}
+
+function openContactContainer(open) {
+    if(open) {
+        contactForm.classList.remove('contact-container-hidden');
+        contactFormOpen = true;
+    } else {
+        contactForm.classList.add('contact-container-hidden');
+        contactFormOpen = false;
+    }
+}
+
+navButton.addEventListener('click', () => {
+    if (!navOpen) {
+        openNav(true);
+        openOverlay(true);
+    } else {
+        openNav(false);
+        openOverlay(false);
     }
 });
 
 navLinks.forEach(link => {
     link.addEventListener('click', () => {
-        if (navOpen) {
-            navButton.classList.remove('open');
-            navItems.classList.remove('openNav');  
-            navOpen = false;
-        }
-        if(!navLinks[5]) {
-            overlay.classList.add('overlay-hidden');
-        }
+            openNav(false);
+            openOverlay(false);
     });
 });
 
 ////////////////// conctact form ////////////////////
-const contactButton = document.querySelectorAll('.contactBtn');
-const closeButton = document.querySelector('.contact-form-close');
-const contactForm = document.querySelector('.contact-container');
-let contactFormOpen = false;
-
 contactButton.forEach(button => {
     button.addEventListener('click', () => {
-        if (!contactFormOpen) {
-            contactForm.classList.remove('contact-container-hidden');
-            overlay.classList.remove('overlay-hidden');
-            contactFormOpen = true;
-        } else {
-            contactForm.classList.add('contact-container-hidden');
-            overlay.classList.add('overlay-hidden');
-            contactFormOpen = false;
-        }
+        openNav(false);
+        openOverlay(true);
+        openContactContainer(true);
     });
 });
 
 closeButton.addEventListener('click', () => {
-    if (!contactFormOpen) {
-        contactForm.classList.remove('contact-container-hidden');
-        contactFormOpen = true;
-    } else {
-        contactForm.classList.add('contact-container-hidden');
-        overlay.classList.add('overlay-hidden');
-        contactFormOpen = false;
-    }
+    openContactContainer(false);
+    openOverlay(false);
 });
+
+overlay.addEventListener('click', () => {
+    openOverlay(false);
+    openNav(false);
+    openContactContainer(false);
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ////////// experience sliding in change this up
 
