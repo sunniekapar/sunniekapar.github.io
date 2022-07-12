@@ -124,7 +124,7 @@ function openNav(open) {
 }
 
 function openContactContainer(open) {
-    if(open) {
+    if (open) {
         contactForm.classList.remove('contact-container-hidden');
         contactFormOpen = true;
     } else {
@@ -145,8 +145,8 @@ navButton.addEventListener('click', () => {
 
 navLinks.forEach(link => {
     link.addEventListener('click', () => {
-            openNav(false);
-            openOverlay(false);
+        openNav(false);
+        openOverlay(false);
     });
 });
 

@@ -102,7 +102,7 @@ body {
 .contact-container {
     left: 30%;
     top: 15vh;
-    display:flex;
+    display: flex;
     align-items: center;
     position: fixed;
     height: 70vh;
@@ -133,11 +133,12 @@ body {
     text-align: center;
 }
 
-.contact-element input, textarea {
+.contact-element input,
+textarea {
     font: var(--font);
     padding: .5rem;
     width: calc(100% - 1rem);
-    font-size: 0.95rem;   
+    font-size: 0.95rem;
     border: 0.8px solid #ddd;
     border-radius: 0.5rem;
     resize: none;
@@ -151,6 +152,7 @@ body {
 .contact-element textarea {
     height: auto;
 }
+
 .contact-form-close {
     all: unset;
     cursor: pointer;
@@ -161,14 +163,15 @@ body {
 }
 
 .send-message {
-    position:relative;
-    display:grid;
+    position: relative;
+    display: grid;
     justify-content: center;
     width: 100%;
 }
+
 .send-message-button {
     all: unset;
-    cursor:pointer;
+    cursor: pointer;
     padding: 1rem 2rem;
     border-radius: 5rem;
     color: var(--accent-color);
@@ -181,11 +184,13 @@ body {
     color: var(--font-color-light);
     background: var(--accent-color);
 }
+
 /*======================================
 2. media styles
 ======================================*/
 
 @media (max-width: 1399px) {
+
     .about-intro,
     .about-paragraph2,
     .about-me-header {
@@ -218,9 +223,10 @@ body {
 
 @media (max-width:999px) {
     .contact-container {
-        left: 5% !important; 
+        left: 5% !important;
         width: 90% !important;
     }
+
     .contact-form {
         padding: 0 1rem;
     }
@@ -250,12 +256,15 @@ body {
     .header-content div {
         padding: 1rem;
     }
+
     .header-content-title {
         font-size: 3rem !important;
     }
+
     .header-content-subtitle {
         font-size: 1.5rem !important;
     }
+
     .navbar {
         font-family: var(--font);
         font-size: var(--nav-font-size);
@@ -296,7 +305,7 @@ body {
     .nav-links li {
         list-style: none;
         margin: 5rem 0;
-        
+
     }
 
     .navitem a {
@@ -369,7 +378,8 @@ body {
         background: var(--background-color);
     }
 
-    .goals-icon, .slideshow-text h1  {
+    .goals-icon,
+    .slideshow-text h1 {
         display: none;
     }
 
@@ -520,19 +530,18 @@ body {
     }
 }
 
-@media only screen 
-  and (min-device-width: 375px) 
-  and (max-device-width: 900px) 
-  and (-webkit-min-device-pixel-ratio: 3)
-  and (orientation: landscape) { 
+@media only screen and (min-device-width: 375px) and (max-device-width: 900px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: landscape) {
     .contact-container {
         height: 90vh;
         top: 5vh;
     }
+
     .contact-form-header {
         display: none;
     }
-    textarea, input {
+
+    textarea,
+    input {
         height: 18px !important;
     }
 
@@ -584,12 +593,13 @@ body {
         padding: 0 1rem;
         margin: 0;
     }
-    
+
     .nav-links li {
         list-style: none;
         margin: 2rem 0;
     }
 }
+
 /*======================================
 3. navigation bar styles
 ======================================*/
@@ -611,7 +621,7 @@ body {
     border-radius: 10rem;
     padding: 1rem 2rem;
     transition-duration: 0.5s;
-    cursor:pointer;
+    cursor: pointer;
 }
 
 .contact-button:hover {
@@ -692,7 +702,7 @@ body {
     width: 80%;
     height: 70vh;
     margin: 0 auto;
-    
+
 }
 
 .slideshow-image {
@@ -906,6 +916,7 @@ body {
     border-radius: .5rem;
 
 }
+
 .experience-cards-hidden {
     opacity: 0;
     transform: translateY(5rem);
