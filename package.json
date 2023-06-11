@@ -1,0 +1,14 @@
+{
+  "name": "sunnie-kapar-website",
+  "version": "1.0.0",
+  "description": "Sunnie Kapar's Personal Website",
+  "main": "public/index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Sunnie Kapar & Mathtew Liu",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^5.2.3"
+  }
+}

@@ -1,0 +1,13 @@
+.blur {
+    backdrop-filter: blur(4px); 
+    --bs-bg-opacity: .85;
+}
+
+.text-gradient {
+    background: hsla(344, 94%, 39%, 1);
+    background: linear-gradient(45deg, hsla(344, 94%, 39%, 1) 0%, hsla(28, 87%, 62%, 1) 100%);
+    background: -moz-linear-gradient(45deg, hsla(344, 94%, 39%, 1) 0%, hsla(28, 87%, 62%, 1) 100%);
+    background: -webkit-linear-gradient(45deg, hsla(344, 94%, 39%, 1) 0%, hsla(28, 87%, 62%, 1) 100%);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
