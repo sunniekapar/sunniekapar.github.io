@@ -1,0 +1,21 @@
+@use "../abstracts/variables" as a;
+.line-heading {
+  display: flex;
+  align-items: center;
+  &::after {
+    content: "";
+    display: block;
+    position: relative;
+    opacity: 0.5;
+    margin-left: 20px;
+    top: 4px;
+    height: 1px;
+    flex-grow: 1;
+    max-width: 250px;
+    border-radius: 3px;
+    background: a.$accent-color;
+    background: linear-gradient(45deg, a.$accent-gradient);
+    background: -moz-linear-gradient(45deg, a.$accent-gradient);
+    background: -webkit-linear-gradient(45deg, a.$accent-gradient);
+  }
+}

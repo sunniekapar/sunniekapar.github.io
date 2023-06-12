@@ -1,0 +1,45 @@
+@use "../abstracts/variables" as a;
+.tab-list-body {
+  max-width: 500px;
+  position: relative;
+  &:not(.hidden) {
+    animation: fade-in 0.2s ease-in-out forwards;
+  }
+  ul {
+    list-style: none;
+    li {
+      margin-bottom: 15px;
+    }
+    li::before {
+      content: "»";
+      position: absolute;
+      left: 0px;
+      color: rgba(a.$accent-color, 1);
+    }
+  }
+}
+
+.tab-list-button {
+  all: unset;
+  padding: 0.5rem 1rem;
+  border-left: 2px solid rgba(a.$accent-color, 0.8);
+  transition: 0.25s;
+  opacity: 0.6;
+  &.tab-visible,
+  &:hover {
+    border-left-color: a.$accent-color;
+    opacity: 1;
+  }
+  &:hover {
+    background: rgba(a.$accent-color, 0.1);
+  }
+}
+@media (max-width: a.$md) {
+  .tab-list-button {
+    border-left: none;
+    border-bottom: 2px solid rgba(a.$accent-color, 0.8);
+    &:hover {
+      border-bottom-color: a.$accent-color;
+    }
+  }
+}

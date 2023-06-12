@@ -1,0 +1,17 @@
+@use "../abstracts/variables" as a;
+.sidebar {
+  * > a {
+    &:hover {
+      background: linear-gradient(45deg, a.$accent-gradient-muted);
+      background: -moz-linear-gradient(45deg, a.$accent-gradient-muted);
+      background: -webkit-linear-gradient(45deg, a.$accent-gradient-muted);
+    }
+    &:hover > * {
+      opacity: 1;
+    }
+  }
+  i {
+    opacity: 0.5;
+    transition: 0.33s;
+  }
+}

@@ -1,5 +1,11 @@
 @use "../node_modules/bootstrap/scss/bootstrap";
-@use "abstracts/variables" as a;
-@use "components/blur";
-@use "components/sidebar-button";
+@use "abstracts/variables";
+@use "abstracts/animations";
+@use "components/visibility";
+@use "components/contact-buttons";
 @use "components/icon";
+@use "components/gradient";
+@use "components/custom-navbar";
+@use "components/line-heading";
+@use "components/tab-list";
+@use "components/project-card";

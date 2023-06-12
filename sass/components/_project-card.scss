@@ -1,0 +1,54 @@
+@use "../abstracts/variables" as a;
+.project-card {
+  display: flex;
+  max-width: 650px;
+  transition: 0.2s ease-in-out;
+  img {
+    max-width: 200px;
+    max-height: 100px;
+  }
+  &:hover {
+    box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+    background-color: rgb(148, 163, 184, 0.01);
+    backdrop-filter: blur(5px);
+    .project-header {
+      color: a.$accent-color;
+    }
+  }
+}
+
+.project-header {
+  transition: 0.2s;
+}
+.project-badge {
+  border-radius: 5rem;
+  margin-right: 0.4rem;
+  margin-top: 0.5rem;
+  line-height: 1.25rem;
+  font-size: 12px;
+  font-weight: 600;
+  background: rgba(a.$accent-color, 0.1);
+  color: a.$accent-color;
+  backdrop-filter: blur(5px);
+}
+.projects {
+  display: flex;
+  position: relative;
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    right: clamp(-1rem, -5%, -3rem);
+    height: 100%;
+    width: 2px;
+    border-radius: 4px;
+    background: a.$accent-color;
+    background: linear-gradient(315deg, a.$accent-gradient);
+    background: -moz-linear-gradient(315deg, a.$accent-gradient);
+    background: -webkit-linear-gradient(315deg, a.$accent-gradient);
+  }
+  &:has(.project-card:hover) .project-card:not(.project-card:hover) {
+    opacity: 0.6;
+  }
+}

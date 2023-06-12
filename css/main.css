@@ -10818,24 +10818,29 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+@keyframes fade-in {
+  from {
+    opacity: 0.25;
+    transform: translateY(1rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.hidden {
+  display: none;
+}
+
 .blur {
   -webkit-backdrop-filter: blur(4px);
           backdrop-filter: blur(4px);
-  --bs-bg-opacity: .85;
-}
-
-.text-gradient {
-  background: hsl(344, 94%, 39%);
-  background: linear-gradient(45deg, hsl(344, 94%, 39%) 0%, hsl(28, 87%, 62%) 100%);
-  background: -webkit-linear-gradient(45deg, hsl(344, 94%, 39%) 0%, hsl(28, 87%, 62%) 100%);
-  -webkit-background-clip: text;
-          background-clip: text;
-  -webkit-text-fill-color: transparent;
+  --bs-bg-opacity: 0.85;
 }
 
 .sidebar * > a:hover {
-  background: linear-gradient(45deg, hsla(344, 94%, 39%, 0.25) 0%, hsla(28, 87%, 62%, 0.25) 100%);
-  background: -webkit-linear-gradient(45deg, hsla(344, 94%, 39%, 0.25) 0%, hsla(28, 87%, 62%, 0.25) 100%);
+  background: linear-gradient(45deg, rgba(9, 9, 121, 0.25) 0%, rgba(0, 212, 255, 0.25) 98%);
+  background: -webkit-linear-gradient(45deg, rgba(9, 9, 121, 0.25) 0%, rgba(0, 212, 255, 0.25) 98%);
 }
 .sidebar * > a:hover > * {
   opacity: 1;
@@ -10849,4 +10854,148 @@ textarea.form-control-lg {
   vertical-align: 0.125em;
   width: 1em;
   height: 1em;
+}
+
+.text-gradient {
+  background: #00296b;
+  background: linear-gradient(45deg, rgb(9, 9, 121) 0%, rgb(0, 212, 255) 98%);
+  background: -webkit-linear-gradient(45deg, rgb(9, 9, 121) 0%, rgb(0, 212, 255) 98%);
+  -webkit-background-clip: text;
+          background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+.custom-navbar {
+  transition: 0.25s ease-out;
+}
+
+.nav-shadow {
+  box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.1);
+}
+
+.nav-hide {
+  transition: 0.25s;
+  transform: translateY(-100%);
+}
+
+.line-heading {
+  display: flex;
+  align-items: center;
+}
+.line-heading::after {
+  content: "";
+  display: block;
+  position: relative;
+  opacity: 0.5;
+  margin-left: 20px;
+  top: 4px;
+  height: 1px;
+  flex-grow: 1;
+  max-width: 250px;
+  border-radius: 3px;
+  background: #00296b;
+  background: linear-gradient(45deg, rgb(9, 9, 121) 0%, rgb(0, 212, 255) 98%);
+  background: -webkit-linear-gradient(45deg, rgb(9, 9, 121) 0%, rgb(0, 212, 255) 98%);
+}
+
+.tab-list-body {
+  max-width: 500px;
+  position: relative;
+}
+.tab-list-body:not(.hidden) {
+  animation: fade-in 0.2s ease-in-out forwards;
+}
+.tab-list-body ul {
+  list-style: none;
+}
+.tab-list-body ul li {
+  margin-bottom: 15px;
+}
+.tab-list-body ul li::before {
+  content: "»";
+  position: absolute;
+  left: 0px;
+  color: #00296b;
+}
+
+.tab-list-button {
+  all: unset;
+  padding: 0.5rem 1rem;
+  border-left: 2px solid rgba(0, 41, 107, 0.8);
+  transition: 0.25s;
+  opacity: 0.6;
+}
+.tab-list-button.tab-visible, .tab-list-button:hover {
+  border-left-color: #00296b;
+  opacity: 1;
+}
+.tab-list-button:hover {
+  background: rgba(0, 41, 107, 0.1);
+}
+
+@media (max-width: 768px) {
+  .tab-list-button {
+    border-left: none;
+    border-bottom: 2px solid rgba(0, 41, 107, 0.8);
+  }
+  .tab-list-button:hover {
+    border-bottom-color: #00296b;
+  }
+}
+.project-card {
+  display: flex;
+  max-width: 650px;
+  transition: 0.2s ease-in-out;
+}
+.project-card img {
+  max-width: 200px;
+  max-height: 100px;
+}
+.project-card:hover {
+  box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+  background-color: rgba(148, 163, 184, 0.01);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+}
+.project-card:hover .project-header {
+  color: #00296b;
+}
+
+.project-header {
+  transition: 0.2s;
+}
+
+.project-badge {
+  border-radius: 5rem;
+  margin-right: 0.4rem;
+  margin-top: 0.5rem;
+  line-height: 1.25rem;
+  font-size: 12px;
+  font-weight: 600;
+  background: rgba(0, 41, 107, 0.1);
+  color: #00296b;
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+}
+
+.projects {
+  display: flex;
+  position: relative;
+}
+.projects::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  right: clamp(-1rem, -5%, -3rem);
+  height: 100%;
+  width: 2px;
+  border-radius: 4px;
+  background: #00296b;
+  background: linear-gradient(315deg, rgb(9, 9, 121) 0%, rgb(0, 212, 255) 98%);
+  background: -webkit-linear-gradient(315deg, rgb(9, 9, 121) 0%, rgb(0, 212, 255) 98%);
+}
+.projects:has(.project-card:hover) .project-card:not(.project-card:hover) {
+  opacity: 0.6;
 }/*# sourceMappingURL=main.css.map */

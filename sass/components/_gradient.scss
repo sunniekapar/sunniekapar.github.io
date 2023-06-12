@@ -1,0 +1,10 @@
+@use "../abstracts/variables" as a;
+.text-gradient {
+  background: a.$accent-color;
+  background: linear-gradient(45deg, a.$accent-gradient);
+  background: -moz-linear-gradient(45deg, a.$accent-gradient);
+  background: -webkit-linear-gradient(45deg, a.$accent-gradient);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}

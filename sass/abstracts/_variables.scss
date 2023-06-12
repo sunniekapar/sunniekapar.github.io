@@ -1,1 +1,15 @@
-$accent-color: #FEE569;
+// $accent-color: #c10638;
+// $accent-gradient: hsla(344, 94%, 39%, 1) 0%, hsla(28, 87%, 62%, 1) 100%;
+// $accent-gradient-muted: hsla(344, 94%, 39%, .25) 0%, hsla(28, 87%, 62%, .25) 100%;
+
+// Blue
+$accent-color: #00296b;
+$accent-gradient: rgba(9, 9, 121, 1) 0%, rgba(0, 212, 255, 1) 98%;
+$accent-gradient-muted: rgba(9, 9, 121, 0.25) 0%, rgba(0, 212, 255, 0.25) 98%;
+
+$xs: 0;
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 1200px;
+$xxl: 1400px;
