@@ -10938,6 +10938,17 @@ textarea.form-control-lg {
 }
 
 @media (max-width: 768px) {
+  .tab-list-button {
+    border-left: none;
+    text-align: center;
+    padding: 0.5rem 0;
+    border-bottom: 2px solid rgba(0, 41, 107, 0.8);
+  }
+  .tab-list-button:hover {
+    border-bottom-color: #00296b;
+  }
+}
+@media (max-width: 576px) {
   .tab-list-options {
     overflow-x: scroll;
     max-width: 280px;
@@ -10950,15 +10961,6 @@ textarea.form-control-lg {
   }
   .tab-list-options::-webkit-scrollbar-track {
     box-shadow: 0px -1px 10px 2px rgba(0, 41, 107, 0.1) inset;
-  }
-  .tab-list-button {
-    border-left: none;
-    text-align: center;
-    padding: 0.5rem 0;
-    border-bottom: 2px solid rgba(0, 41, 107, 0.8);
-  }
-  .tab-list-button:hover {
-    border-bottom-color: #00296b;
   }
 }
 .project-card {
