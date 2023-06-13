@@ -20,7 +20,9 @@
 .project-header {
   transition: 0.2s;
 }
+
 .project-badge {
+  display: inline-block;
   border-radius: 5rem;
   margin-right: 0.4rem;
   margin-top: 0.5rem;

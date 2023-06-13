@@ -25,6 +25,9 @@
   border-left: 2px solid rgba(a.$accent-color, 0.8);
   transition: 0.25s;
   opacity: 0.6;
+  white-space: nowrap;
+  min-width: 140px;
+  font-weight: 600;
   &.tab-visible,
   &:hover {
     border-left-color: a.$accent-color;
@@ -34,9 +37,25 @@
     background: rgba(a.$accent-color, 0.1);
   }
 }
+
 @media (max-width: a.$md) {
+  .tab-list-options {
+    overflow-x: scroll;
+    max-width: 280px;
+    &::-webkit-scrollbar {
+      height: 10px;
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: rgba(a.$accent-color, 0.1);
+    }
+    &::-webkit-scrollbar-track {
+      box-shadow: 0px -1px 10px 2px rgba(a.$accent-color, 0.1) inset;
+    }
+  }
   .tab-list-button {
     border-left: none;
+    text-align: center;
+    padding: 0.5rem 0;
     border-bottom: 2px solid rgba(a.$accent-color, 0.8);
     &:hover {
       border-bottom-color: a.$accent-color;
