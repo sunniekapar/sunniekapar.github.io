@@ -1,11 +1,17 @@
-// $accent-color: #c10638;
-// $accent-gradient: hsla(344, 94%, 39%, 1) 0%, hsla(28, 87%, 62%, 1) 100%;
-// $accent-gradient-muted: hsla(344, 94%, 39%, .25) 0%, hsla(28, 87%, 62%, .25) 100%;
+$accent-color: #c10638;
+$accent-gradient: hsla(344, 94%, 39%, 1) 0%, hsla(28, 87%, 62%, 1) 100%;
+$accent-gradient-muted: hsla(344, 94%, 39%, .25) 0%, hsla(28, 87%, 62%, .25) 100%;
 
 // Blue
 $accent-color: #00296b;
 $accent-gradient: rgba(9, 9, 121, 1) 0%, rgba(0, 212, 255, 1) 98%;
 $accent-gradient-muted: rgba(9, 9, 121, 0.25) 0%, rgba(0, 212, 255, 0.25) 98%;
+
+// Green
+
+// $accent-color: #249456 ;
+// $accent-gradient: rgba(47,191,113,1) 0%, rgba(9,90,121,1) 100%;
+// $accent-gradient-muted: rgba(47,191,113,.25) 0%, rgba(9,90,121,.25) 100%;
 
 $xs: 0;
 $sm: 576px;
