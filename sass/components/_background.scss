@@ -6,7 +6,7 @@ body {
 }
 
 .wrapper {
-    width: min(100% - 3rem, 50rem);
+    width: min(100%, 50rem);
     margin-inline: auto;
     position: relative;
     z-index: 3;
