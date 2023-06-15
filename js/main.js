@@ -29,4 +29,3 @@ tablistButtons.forEach((button) => button.addEventListener("click", () => {
     currentPannel.classList.remove("hidden");
   }
 }));
-

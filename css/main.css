@@ -249,25 +249,23 @@ body {
 .blobz.accent {
   fill: #00296b;
 }
-
 .blobz.primary {
   fill: #00ccff;
 }
-
 .blobz.secondary {
   fill: #090d11;
 }
-
 .blobz.sm {
   width: 5rem;
 }
-
 .blobz.md {
   width: 10rem;
 }
-
 .blobz.lg {
   width: 15rem;
+}
+.blobz.xl {
+  width: 20rem;
 }
 
 .blobz:nth-child(1) {
@@ -285,7 +283,7 @@ body {
 .blobz:nth-child(3) {
   --amount: 8;
   --time: 37s;
-  grid-area: c3;
+  opacity: 0.5;
 }
 
 .blobz:nth-child(4) {
@@ -296,7 +294,7 @@ body {
 
 .blobz:nth-child(5) {
   --amount: 1;
-  --time: 24s;
+  --time: 50s;
   grid-area: e5;
 }
 
