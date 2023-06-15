@@ -1,0 +1,27 @@
+@use "../abstracts/variables" as a;
+
+.text-accent-color {
+  color: a.$accent-color;
+}
+
+.bg-accent-color {
+  background: a.$accent-color;
+}
+
+.text-primary-color {
+  color: a.$primary-color;
+}
+
+.bg-primary-color {
+  background: a.$primary-color;
+}
+
+.text-gradient {
+  background: a.$accent-color;
+  background: linear-gradient(45deg, a.$accent-gradient);
+  background: -moz-linear-gradient(45deg, a.$accent-gradient);
+  background: -webkit-linear-gradient(45deg, a.$accent-gradient);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}

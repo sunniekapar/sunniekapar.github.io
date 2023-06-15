@@ -1,4 +1,7 @@
+@use "../abstracts/variables" as a;
+
 .custom-navbar {
+  background: rgba(a.$background-color,0.7);
   transition: 0.25s ease-out;
 }
 

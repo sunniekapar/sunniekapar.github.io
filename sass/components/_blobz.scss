@@ -1,0 +1,78 @@
+@use "../abstracts/variables" as a;
+.blobz-container {
+  position: absolute;
+  overflow: hidden;
+  padding: 5rem;
+  display: grid;
+  grid-template: repeat(5, 1fr) / repeat(5, 1fr);
+  grid-template-areas:
+    "a1 b1 c1 d1 e1"
+    "a2 b2 c2 d2 e2"
+    "a3 b3 c3 d3 e3"
+    "a4 b4 c4 d4 e4"
+    "a5 b5 c5 d5 e5";
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  place-items: center;
+}
+
+.blobz.accent {
+  fill: a.$accent-color;
+}
+
+.blobz.primary {
+    fill: a.$primary-color;
+  }
+
+  .blobz.secondary {
+    fill: a.$secondary-color;
+  }
+
+.blobz.sm {
+  width: 5rem;
+}
+
+.blobz.md {
+  width: 10rem;
+}
+.blobz.lg {
+  width: 15rem;
+}
+
+.blobz:nth-child(1) {
+  --amount: 7;
+  --time: 31s;
+  grid-area: e1;
+}
+
+.blobz:nth-child(2) {
+    --amount: 3;
+    --time: 20s;
+  grid-area: a2;
+}
+
+.blobz:nth-child(3) {
+    --amount: 8;
+    --time: 37s;
+  grid-area: c3;
+}
+
+.blobz:nth-child(4) {
+    --amount: 5;
+    --time: 11s;
+  grid-area: b4;
+}
+
+.blobz:nth-child(5) {
+    --amount: 1;
+    --time: 24s;
+  grid-area: e5;
+}
+
+.blobz:nth-child(6) {
+    --amount: 6;
+    --time: 13s;
+  grid-area: a5;
+}

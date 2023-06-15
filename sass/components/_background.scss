@@ -1,0 +1,14 @@
+@use "../abstracts/variables" as a;
+body {
+    position: relative;
+    background-color: #f5f5f5;
+    color: black;
+}
+
+.wrapper {
+    width: min(100% - 3rem, 50rem);
+    margin-inline: auto;
+    position: relative;
+    z-index: 3;
+    background: rgba(a.$background-color, 0.75)
+}

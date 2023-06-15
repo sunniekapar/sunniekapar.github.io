@@ -1,12 +1,13 @@
-@use "../node_modules/bootstrap/scss/bootstrap";
 @use "abstracts/variables";
 @use "abstracts/animations";
+@use "abstracts/custom-colors";
+@use "components/background";
 @use "components/visibility";
 @use "components/contact-buttons";
 @use "components/icon";
-@use "components/gradient";
 @use "components/custom-navbar";
 @use "components/line-heading";
 @use "components/tab-list";
 @use "components/project-card";
 @use "components/header";
+@use "components/blobz";
