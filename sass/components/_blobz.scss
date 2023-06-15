@@ -1,8 +1,8 @@
 @use "../abstracts/variables" as a;
+
 .blobz-container {
   position: absolute;
   overflow: hidden;
-  padding: 5rem;
   display: grid;
   grid-template: repeat(5, 1fr) / repeat(5, 1fr);
   grid-template-areas:
@@ -17,7 +17,10 @@
   z-index: 1;
   place-items: center;
 }
+
 .blobz {
+  position: absolute;
+  overflow: hidden;
   &.accent {
     fill: a.$accent-color;
   }
@@ -26,6 +29,9 @@
   }
   &.secondary {
     fill: a.$secondary-color;
+  }
+  &.light {
+    fill: a.$background-color;
   }
   &.sm {
     width: 5rem;
@@ -45,34 +51,60 @@
   --amount: 7;
   --time: 31s;
   grid-area: e1;
+  top: -4rem;
+  right: -6rem;
 }
 
 .blobz:nth-child(2) {
   --amount: 3;
   --time: 20s;
-  grid-area: a2;
+  left: -8rem;
+  bottom: 0;
+  grid-area: a1;
 }
 
 .blobz:nth-child(3) {
   --amount: 8;
   --time: 37s;
-  opacity: 0.5;
+  grid-area: a1;
+  left: -6rem;
+  bottom:0;
 }
 
 .blobz:nth-child(4) {
   --amount: 5;
   --time: 11s;
-  grid-area: b4;
+  grid-area: e2;
+  right: -8rem;
+  bottom: 0;
 }
 
 .blobz:nth-child(5) {
   --amount: 1;
   --time: 50s;
-  grid-area: e5;
+  grid-area: a4;
+  left: -10rem;
+  bottom: -8rem;
 }
 
 .blobz:nth-child(6) {
   --amount: 6;
   --time: 13s;
-  grid-area: a5;
+  grid-area: a4;
+  left: -6rem;
+  bottom: -2rem;  
+}
+
+.blobz:nth-child(7) {
+  --amount: 0;
+  --time: 40s;
+  grid-area: b3;
+}
+
+.blobz:nth-child(8) {
+  --amount: 8;
+  --time: 30s;
+  grid-area: e5;
+  right: -12rem;
+  top: -4rem;
 }

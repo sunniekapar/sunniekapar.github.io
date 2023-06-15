@@ -49,6 +49,24 @@ body {
   background: rgba(245, 245, 245, 0.75);
 }
 
+::-webkit-scrollbar {
+  width: 16px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 41, 107, 0.6);
+  border: 3px solid #f5f5f5;
+  border-radius: 1000rem;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 41, 107, 0.8);
+}
+
 .hidden {
   display: none;
 }
@@ -182,8 +200,6 @@ body {
 .project-card:hover {
   box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
   background-color: rgba(148, 163, 184, 0.01);
-  -webkit-backdrop-filter: blur(5px);
-          backdrop-filter: blur(5px);
 }
 .project-card:hover .project-header {
   color: #00296b;
@@ -235,7 +251,6 @@ body {
 .blobz-container {
   position: absolute;
   overflow: hidden;
-  padding: 5rem;
   display: grid;
   grid-template: repeat(5, 1fr)/repeat(5, 1fr);
   grid-template-areas: "a1 b1 c1 d1 e1" "a2 b2 c2 d2 e2" "a3 b3 c3 d3 e3" "a4 b4 c4 d4 e4" "a5 b5 c5 d5 e5";
@@ -246,6 +261,10 @@ body {
   place-items: center;
 }
 
+.blobz {
+  position: absolute;
+  overflow: hidden;
+}
 .blobz.accent {
   fill: #00296b;
 }
@@ -254,6 +273,9 @@ body {
 }
 .blobz.secondary {
   fill: #090d11;
+}
+.blobz.light {
+  fill: #f5f5f5;
 }
 .blobz.sm {
   width: 5rem;
@@ -272,34 +294,60 @@ body {
   --amount: 7;
   --time: 31s;
   grid-area: e1;
+  top: -4rem;
+  right: -6rem;
 }
 
 .blobz:nth-child(2) {
   --amount: 3;
   --time: 20s;
-  grid-area: a2;
+  left: -8rem;
+  bottom: 0;
+  grid-area: a1;
 }
 
 .blobz:nth-child(3) {
   --amount: 8;
   --time: 37s;
-  opacity: 0.5;
+  grid-area: a1;
+  left: -6rem;
+  bottom: 0;
 }
 
 .blobz:nth-child(4) {
   --amount: 5;
   --time: 11s;
-  grid-area: b4;
+  grid-area: e2;
+  right: -8rem;
+  bottom: 0;
 }
 
 .blobz:nth-child(5) {
   --amount: 1;
   --time: 50s;
-  grid-area: e5;
+  grid-area: a4;
+  left: -10rem;
+  bottom: -8rem;
 }
 
 .blobz:nth-child(6) {
   --amount: 6;
   --time: 13s;
-  grid-area: a5;
+  grid-area: a4;
+  left: -6rem;
+  bottom: -2rem;
+}
+
+.blobz:nth-child(7) {
+  --amount: 0;
+  --time: 40s;
+  grid-area: b3;
+}
+
+.blobz:nth-child(8) {
+  --amount: 8;
+  --time: 30s;
+  grid-area: e5;
+  right: -12rem;
+  top: -4rem;
 }/*# sourceMappingURL=main.css.map */
