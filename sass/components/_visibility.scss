@@ -1,7 +1,9 @@
+@use "../abstracts/variables" as a;
 .hidden {
   display: none;
 }
 
 .blur {
   backdrop-filter: blur(4px);
+  background: rgba(a.$background-color, 0.9);
 }
